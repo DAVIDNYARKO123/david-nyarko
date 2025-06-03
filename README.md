@@ -12,12 +12,15 @@
 
 ## 🏅 Awards
 
-- 🥈 **2nd Place WINNER**, Emory Health AI Datathon 2024 (2nd out of 12 teams)  
-- 📜 **Certificate of Participation**, Health AI Summer School, Symposium & Datathon @ Emory University 2024  
-- 🏅 **Certificate of Achievement**, for excellence in AI/ML contributions to NASA FDL 2023 & US Dept. of Energy  
-- 🏆 **WINNER**, Best Student in Engineering – Ghana Tertiary Awards 2020  
-- ⭐ **WINNER**, Rising Star in Embedded Programming – PHYSAG Excellence Awards 2021  
-- 🎓 **WINNER**, Most Innovative Engineering Physics Student – UCC, School of Physical Sciences Dean’s Award 2017  
+- 🏆 **Winner**, $100,000 seed funding – Capital One/Delaware State University Innovation Pitch Competition (AgroVision)
+- 🥇 **1st Place**, Poster Presentation – 2025 National Symposium on Equitable AI, CEAMLS  
+- 🥇 **1st Place**, Morgan TechFest 2024 Innovation Expo – $2,000 prize  
+- 🥈 **2nd Place Winner**, Emory University Health AI Datathon 2024 (12 teams competed) 
+- 🏅 **Certificate of Participation**, Health AI Summer School, Symposium & Datathon @ Emory 2024  
+- 🏅 **Certificate of Achievement**, Outstanding Performance – FDL 2023 & U.S. Department of Energy, SETI Institute  
+- 🏆 **Winner**, Best Student in Engineering – Ghana Tertiary Awards 2020  
+- ⭐ **Winner**, Rising Star in Embedded Programming – PHYSAG Excellence Awards 2021  
+- 🛠️ **Winner**, Most Innovative Engineering Physics Student – UCC Dean’s Award 2017  
 
 ---
 
