@@ -10,6 +10,17 @@
 
 ---
 
+## 🏅 Awards
+
+- 🥈 **2nd Place WINNER**, Emory Health AI Datathon 2024 (2nd out of 12 teams)  
+- 📜 **Certificate of Participation**, Health AI Summer School, Symposium & Datathon @ Emory University 2024  
+- 🏅 **Certificate of Achievement**, for excellence in AI/ML contributions to NASA FDL 2023 & US Dept. of Energy  
+- 🏆 **WINNER**, Best Student in Engineering – Ghana Tertiary Awards 2020  
+- ⭐ **WINNER**, Rising Star in Embedded Programming – PHYSAG Excellence Awards 2021  
+- 🎓 **WINNER**, Most Innovative Engineering Physics Student – UCC, School of Physical Sciences Dean’s Award 2017  
+
+---
+
 ## 🏆 GitHub Achievements
 
 <p align="center">
