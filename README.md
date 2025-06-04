@@ -20,7 +20,7 @@
 - 🏅 **Certificate of Achievement**, Outstanding Performance – FDL 2023 & U.S. Department of Energy, SETI Institute  
 - 🏆 **Winner**, Best Student in Engineering – Ghana Tertiary Awards 2020  
 - ⭐ **Winner**, Rising Star in Embedded Programming – PHYSAG Excellence Awards 2021  
-- 🛠️ **Winner**, Most Innovative Engineering Physics Student – UCC Dean’s Award 2017  
+- 🛠️ **Winner**, Most Innovative Engineering Physics Student – UCC Dean’s Award 2017.  
 
 ---
 
