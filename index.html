@@ -1,0 +1,1457 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>David Nyarko - AI & Robotics Systems Engineer | Award-Winning Innovator</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Doctoral AI Engineer leading breakthrough autonomous systems. $100K competition winner, MIT award recipient, featured in Baltimore Banner for BWI autonomous wheelchair project.">
+    <meta name="keywords" content="David Nyarko, AI Engineer, Robotics, Autonomous Systems, Machine Learning, BWI Airport, Wheelchair Technology, Morgan State University">
+    <meta name="author" content="David Nyarko">
+    
+    <!-- Open Graph / Social Media Preview -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://davidnyarko.com/">
+    <meta property="og:title" content="David Nyarko - AI & Robotics Systems Engineer">
+    <meta property="og:description" content="Award-winning AI engineer developing autonomous wheelchair systems at BWI Airport. $100K competition winner with breakthrough innovations in accessible technology.">
+    <meta property="og:image" content="https://davidnyarko.com/preview-image.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://davidnyarko.com/">
+    <meta name="twitter:title" content="David Nyarko - AI & Robotics Systems Engineer">
+    <meta name="twitter:description" content="Award-winning AI engineer developing autonomous wheelchair systems at BWI Airport. $100K competition winner with breakthrough innovations.">
+    <meta name="twitter:image" content="https://davidnyarko.com/preview-image.jpg">
+    
+    <!-- LinkedIn Preview -->
+    <meta property="linkedin:owner" content="david-nyarko-766974163">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --black: #000000;
+            --white: #ffffff;
+            --gray-50: #fafafa;
+            --gray-100: #f5f5f5;
+            --gray-200: #e5e5e5;
+            --gray-300: #d4d4d4;
+            --gray-400: #a3a3a3;
+            --gray-500: #737373;
+            --gray-600: #525252;
+            --gray-700: #404040;
+            --gray-800: #262626;
+            --gray-900: #171717;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--white);
+            color: var(--black);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            border-bottom: 1px solid var(--gray-200);
+            transition: all 0.3s ease;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 80px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .nav-logo {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--black);
+            text-decoration: none;
+            letter-spacing: -0.02em;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 40px;
+        }
+
+        .nav-menu a {
+            color: var(--gray-600);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 15px;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .nav-menu a:hover {
+            color: var(--black);
+        }
+
+        .nav-menu a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -4px;
+            left: 0;
+            background: var(--black);
+            transition: width 0.3s ease;
+        }
+
+        .nav-menu a:hover::after {
+            width: 100%;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 120px 0 80px;
+            background: var(--white);
+        }
+
+        .hero-container {
+            display: grid;
+            grid-template-columns: 1fr 400px;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .hero-content h1 {
+            font-size: clamp(48px, 5vw, 72px);
+            font-weight: 900;
+            line-height: 1.1;
+            letter-spacing: -0.02em;
+            margin-bottom: 24px;
+            color: var(--black);
+        }
+
+        .hero-subtitle {
+            font-size: 24px;
+            color: var(--gray-600);
+            font-weight: 500;
+            margin-bottom: 32px;
+            line-height: 1.4;
+        }
+
+        .hero-description {
+            font-size: 18px;
+            color: var(--gray-500);
+            line-height: 1.7;
+            margin-bottom: 40px;
+            max-width: 500px;
+        }
+
+        .hero-stats {
+            display: flex;
+            gap: 40px;
+            margin-bottom: 48px;
+        }
+
+        .stat {
+            text-align: left;
+        }
+
+        .stat-number {
+            font-size: 36px;
+            font-weight: 900;
+            color: var(--black);
+            display: block;
+            line-height: 1;
+            margin-bottom: 8px;
+        }
+
+        .stat-label {
+            font-size: 14px;
+            color: var(--gray-500);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-weight: 600;
+        }
+
+        .hero-cta {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 16px 32px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .btn-primary {
+            background: var(--black);
+            color: var(--white);
+        }
+
+        .btn-primary:hover {
+            background: var(--gray-800);
+            transform: translateY(-1px);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--black);
+            border-color: var(--gray-300);
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--black);
+            transform: translateY(-1px);
+        }
+
+        .hero-image {
+            background: var(--gray-100);
+            border-radius: 16px;
+            height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 16px;
+        }
+
+        .hero-placeholder {
+            font-size: 18px;
+            color: var(--gray-400);
+            text-align: center;
+        }
+
+        /* Sections */
+        .section {
+            padding: 100px 0;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 80px;
+        }
+
+        .section-title {
+            font-size: 48px;
+            font-weight: 900;
+            color: var(--black);
+            margin-bottom: 24px;
+            letter-spacing: -0.02em;
+        }
+
+        .section-subtitle {
+            font-size: 20px;
+            color: var(--gray-500);
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        /* About Section */
+        .about {
+            background: var(--gray-50);
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 400px 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .about-image {
+            background: var(--gray-200);
+            border-radius: 16px;
+            height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .about-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 16px;
+        }
+
+        .about-text {
+            max-width: 600px;
+        }
+
+        .about-text h3 {
+            font-size: 32px;
+            font-weight: 800;
+            color: var(--black);
+            margin-bottom: 24px;
+            letter-spacing: -0.02em;
+        }
+
+        .about-text p {
+            font-size: 18px;
+            color: var(--gray-600);
+            line-height: 1.7;
+            margin-bottom: 32px;
+        }
+
+        .about-highlights {
+            list-style: none;
+        }
+
+        .about-highlights li {
+            font-size: 16px;
+            color: var(--gray-600);
+            margin-bottom: 12px;
+            padding-left: 24px;
+            position: relative;
+        }
+
+        .about-highlights li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: var(--black);
+            font-weight: 600;
+        }
+
+        /* News Section */
+        .news {
+            background: var(--white);
+        }
+
+        .news-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+            gap: 32px;
+        }
+
+        .news-card {
+            background: var(--white);
+            border: 1px solid var(--gray-200);
+            border-radius: 16px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .news-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            border-color: var(--gray-300);
+        }
+
+        .news-image {
+            height: 240px;
+            background: var(--gray-100);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .news-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .news-content {
+            padding: 32px;
+        }
+
+        .news-source {
+            font-size: 14px;
+            color: var(--gray-500);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 12px;
+        }
+
+        .news-title {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--black);
+            margin-bottom: 16px;
+            line-height: 1.4;
+        }
+
+        .news-excerpt {
+            font-size: 16px;
+            color: var(--gray-600);
+            line-height: 1.6;
+            margin-bottom: 24px;
+        }
+
+        .news-link {
+            font-size: 16px;
+            color: var(--black);
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .news-link:hover {
+            color: var(--gray-700);
+            gap: 12px;
+        }
+
+        /* Publications Section */
+        .publications-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 32px;
+        }
+
+        .publication-card {
+            background: var(--white);
+            border: 1px solid var(--gray-200);
+            border-radius: 16px;
+            padding: 32px;
+            transition: all 0.3s ease;
+        }
+
+        .publication-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            border-color: var(--gray-300);
+        }
+
+        .publication-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 16px;
+        }
+
+        .publication-type {
+            background: var(--black);
+            color: var(--white);
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .publication-year {
+            color: var(--gray-500);
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        .publication-title {
+            font-size: 22px;
+            font-weight: 700;
+            color: var(--black);
+            margin-bottom: 12px;
+            line-height: 1.3;
+        }
+
+        .publication-authors {
+            font-size: 16px;
+            color: var(--gray-600);
+            margin-bottom: 8px;
+        }
+
+        .publication-venue {
+            font-size: 15px;
+            color: var(--gray-500);
+            font-style: italic;
+            margin-bottom: 16px;
+        }
+
+        .publication-abstract {
+            font-size: 15px;
+            color: var(--gray-600);
+            line-height: 1.6;
+            margin-bottom: 24px;
+        }
+
+        .publication-links {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .pub-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 16px;
+            background: var(--gray-100);
+            color: var(--black);
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .pub-link:hover {
+            background: var(--black);
+            color: var(--white);
+            transform: translateY(-1px);
+        }
+
+        /* Achievements Section */
+        .achievements {
+            background: var(--white);
+        }
+
+        .achievements-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 32px;
+        }
+
+        .achievement-card {
+            background: var(--white);
+            border: 1px solid var(--gray-200);
+            border-radius: 16px;
+            padding: 40px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .achievement-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            border-color: var(--gray-300);
+        }
+
+        .achievement-icon {
+            width: 80px;
+            height: 80px;
+            background: var(--black);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 24px;
+            font-size: 32px;
+            color: var(--white);
+        }
+
+        .achievement-value {
+            font-size: 36px;
+            font-weight: 900;
+            color: var(--black);
+            margin-bottom: 8px;
+        }
+
+        .achievement-title {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--black);
+            margin-bottom: 16px;
+        }
+
+        .achievement-description {
+            font-size: 16px;
+            color: var(--gray-600);
+            line-height: 1.6;
+        }
+
+        /* Contact Section */
+        .contact {
+            background: var(--black);
+            color: var(--white);
+        }
+
+        .contact .section-title {
+            color: var(--white);
+        }
+
+        .contact .section-subtitle {
+            color: var(--gray-400);
+        }
+
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 400px;
+            gap: 80px;
+            align-items: start;
+        }
+
+        .contact-info h3 {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--white);
+            margin-bottom: 32px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 24px;
+            color: var(--gray-300);
+            font-size: 16px;
+        }
+
+        .contact-item-icon {
+            width: 48px;
+            height: 48px;
+            background: var(--gray-800);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            color: var(--white);
+        }
+
+        .contact-cta {
+            text-align: center;
+        }
+
+        .contact-cta h3 {
+            font-size: 32px;
+            font-weight: 800;
+            color: var(--white);
+            margin-bottom: 24px;
+            letter-spacing: -0.02em;
+        }
+
+        .contact-cta p {
+            font-size: 18px;
+            color: var(--gray-400);
+            margin-bottom: 40px;
+            line-height: 1.6;
+        }
+
+        .contact-buttons {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-white {
+            background: var(--white);
+            color: var(--black);
+        }
+
+        .btn-white:hover {
+            background: var(--gray-100);
+            transform: translateY(-1px);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--white);
+            border-color: var(--gray-600);
+        }
+
+        .btn-outline:hover {
+            border-color: var(--white);
+            background: var(--white);
+            color: var(--black);
+            transform: translateY(-1px);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--gray-900);
+            color: var(--gray-400);
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            margin-bottom: 32px;
+        }
+
+        .social-link {
+            width: 48px;
+            height: 48px;
+            background: var(--gray-800);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--gray-400);
+            text-decoration: none;
+            font-size: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .social-link:hover {
+            background: var(--white);
+            color: var(--black);
+            transform: translateY(-2px);
+        }
+
+        .footer-text {
+            font-size: 14px;
+            color: var(--gray-500);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .hero-container,
+            .about-content,
+            .contact-content {
+                grid-template-columns: 1fr;
+                gap: 60px;
+            }
+
+            .hero-image,
+            .about-image {
+                order: -1;
+                height: 400px;
+            }
+
+            .hero-stats {
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 20px;
+            }
+
+            .nav-menu {
+                display: none;
+            }
+
+            .hero {
+                padding: 100px 0 60px;
+            }
+
+            .section {
+                padding: 80px 0;
+            }
+
+            .section-title {
+                font-size: 36px;
+            }
+
+            .hero-content h1 {
+                font-size: 48px;
+            }
+
+            .hero-stats {
+                gap: 32px;
+                flex-wrap: wrap;
+            }
+
+            .news-grid,
+            .achievements-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-cta,
+            .contact-buttons {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .btn {
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 16px;
+            }
+
+            .section-header {
+                margin-bottom: 60px;
+            }
+
+            .hero-content h1 {
+                font-size: 36px;
+            }
+
+            .section-title {
+                font-size: 28px;
+            }
+        }
+
+        /* Fade in animation */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.8s ease forwards;
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in:nth-child(2) { animation-delay: 0.1s; }
+        .fade-in:nth-child(3) { animation-delay: 0.2s; }
+        .fade-in:nth-child(4) { animation-delay: 0.3s; }
+        .fade-in:nth-child(5) { animation-delay: 0.4s; }
+        .fade-in:nth-child(6) { animation-delay: 0.5s; }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a href="#" class="nav-logo">David Nyarko</a>
+            <ul class="nav-menu">
+                <li><a href="#about">About</a></li>
+                <li><a href="#news">News</a></li>
+                <li><a href="#publications">Publications</a></li>
+                <li><a href="#achievements">Achievements</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-container">
+                <div class="hero-content">
+                    <h1>David Nyarko</h1>
+                    <p class="hero-subtitle">AI & Robotics Systems Engineer</p>
+                    <p class="hero-description">
+                        Leading breakthrough innovations in autonomous systems and accessible technology. 
+                        Developing self-driving wheelchairs at BWI Airport and creating AI solutions that serve humanity.
+                    </p>
+                    
+                    <div class="hero-stats">
+                        <div class="stat">
+                            <span class="stat-number">$102K</span>
+                            <span class="stat-label">Total Prize Money</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">9</span>
+                            <span class="stat-label">Major Awards</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">4.0</span>
+                            <span class="stat-label">Perfect GPA</span>
+                        </div>
+                    </div>
+
+                    <div class="hero-cta">
+                        <a href="#contact" class="btn btn-primary">Get In Touch</a>
+                        <a href="EXIBITS/DavidNyarko Resume.pdf" target="_blank" class="btn btn-secondary">Download Resume</a>
+                    </div>
+                </div>
+
+                <div class="hero-image">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=500&fit=crop&crop=face&auto=format&q=80" alt="David Nyarko - Professional Photo" style="border-radius: 16px;">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=400&h=500&fit=crop&auto=format&q=80" alt="Autonomous Wheelchair Technology" style="border-radius: 16px;">
+                </div>
+                
+                <div class="about-text">
+                    <h3>About Me</h3>
+                    <p>
+                        Award-winning AI engineer and Doctoral Engineering student at Morgan State University, 
+                        with over $102K in competition winnings and recognition from top-tier institutions 
+                        including MIT, SETI Institute, and Capital One.
+                    </p>
+                    <p>
+                        My breakthrough work in autonomous systems and accessible technology has been featured 
+                        in major media outlets and is making real-world impact through innovative solutions 
+                        that serve humanity.
+                    </p>
+                    
+                    <ul class="about-highlights">
+                        <li>$100K Winner - Capital One Innovation Venture Competition (AgroVision AI farming system)</li>
+                        <li>Leading autonomous wheelchair testing at BWI Airport (5-year research project)</li>
+                        <li>1st Place Winner - 2025 National Symposium on Equitable AI</li>
+                        <li>1st Place Winner - MIT AI & Education Summit Climate Challenge</li>
+                        <li>1st Place Winner - Morgan TechFest 2024 Innovation Expo ($2K prize)</li>
+                        <li>SETI Institute Machine Learning Engineer with US Department of Energy recognition</li>
+                        <li>Published researcher in Springer Nature (ELT: Easy Label Trainer)</li>
+                        <li>Featured in Baltimore Banner, WMAR News, Business Journal, and NSBE</li>
+                        <li>Perfect 4.0 GPA in Doctoral Engineering program</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- News Section -->
+    <section id="news" class="section news">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Featured in Major News</h2>
+                <p class="section-subtitle">
+                    My innovative work has been covered by leading publications and recognized by top institutions
+                </p>
+            </div>
+
+            <div class="news-grid">
+                <article class="news-card fade-in">
+                    <div class="news-image">
+                        <img src="https://images.unsplash.com/photo-1562774053-701939374585?w=400&h=240&fit=crop&auto=format&q=80" alt="MIT AI Education Summit Award" style="border-radius: 0;">
+                    </div>
+                    <div class="news-content">
+                        <div class="news-source">MIT AI & Education Summit</div>
+                        <h3 class="news-title">Morgan Students Win First Place at MIT Hackathon</h3>
+                        <p class="news-excerpt">
+                            First Place Winner at the MIT AI & Education Summit Hack the Climate Challenge for innovative ThermaWise project, 
+                            demonstrating excellence in climate-focused AI solutions and securing top achievement among competing teams.
+                        </p>
+                        <a href="https://www.morgan.edu/news/morgan-students-win-first-place-at-mit-hackathon" target="_blank" class="news-link">
+                            Read MIT Coverage →
+                        </a>
+                    </div>
+                </article>
+
+                <article class="news-card fade-in">
+                    <div class="news-image">
+                        <img src="https://images.unsplash.com/photo-1553028826-f4804a6dba3b?w=400&h=240&fit=crop&auto=format&q=80" alt="Morgan State University - Competition Winner" style="border-radius: 0;">
+                    </div>
+                    <div class="news-content">
+                        <div class="news-source">Morgan State University</div>
+                        <h3 class="news-title">Graduate Students Win First Place Victory, Earn $100K Top Prize</h3>
+                        <p class="news-excerpt">
+                            Led Team AgroVision to victory with AI-powered modular hydroponic farming system, 
+                            securing $100,000 in seed funding from Capital One/Delaware State University competition.
+                        </p>
+                        <a href="https://www.morgan.edu/news/graduate-students-win-1st-place-at-national-innovation-venture-competition" target="_blank" class="news-link">
+                            Read Morgan State →
+                        </a>
+                        <br><br>
+                        <a href="https://www.delawarepublic.org/education/2025-04-14/hbcu-students-developing-agritech-solutions-win-money-and-get-tips-on-moving-their-ideas-forward" target="_blank" class="news-link">
+                            Delaware Public Media →
+                        </a>
+                    </div>
+                </article>
+
+                <article class="news-card fade-in">
+                    <div class="news-image">
+                        <img src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?w=400&h=240&fit=crop&auto=format&q=80" alt="NSBE - Engineering Leadership" style="border-radius: 0;">
+                    </div>
+                    <div class="news-content">
+                        <div class="news-source">National Society of Black Engineers</div>
+                        <h3 class="news-title">Engineering Newsmaker Gives Credit to NSBE</h3>
+                        <p class="news-excerpt">
+                            Featured as an emerging engineering leader making significant contributions to AI and robotics innovation 
+                            while giving back to the global engineering community through NSBE.
+                        </p>
+                        <a href="https://nsbe.org/article/engineering-newsmaker-gives-credit-to-nsbe-ghana/" target="_blank" class="news-link">
+                            Read NSBE Article →
+                        </a>
+                    </div>
+                </article>
+
+                <article class="news-card fade-in">
+                    <div class="news-image">
+                        <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=400&h=240&fit=crop&auto=format&q=80" alt="Baltimore Banner - BWI Wheelchair News" style="border-radius: 0;">
+                    </div>
+                    <div class="news-content">
+                        <div class="news-source">The Baltimore Banner</div>
+                        <h3 class="news-title">Self-driving wheelchairs could someday transport passengers with disabilities to BWI's gates</h3>
+                        <p class="news-excerpt">
+                            Leading a 5-year Morgan State University project developing autonomous wheelchairs for airport accessibility, 
+                            with Phase 3 testing at BWI Airport demonstrating breakthrough mobility solutions.
+                        </p>
+                        <a href="https://www.thebaltimorebanner.com/community/transportation/autonomous-wheelchairs-bwi-artificial-intelligence-JLNZ7UHVDBDJDCMSDXGDXJOACQ/" target="_blank" class="news-link">
+                            Read Baltimore Banner →
+                        </a>
+                        <br><br>
+                        <a href="https://www.wmar2news.com/local/morgan-state-students-test-autonomous-wheelchair-that-uses-ai" target="_blank" class="news-link">
+                            Watch WMAR News →
+                        </a>
+                    </div>
+                </article>
+
+                <article class="news-card fade-in">
+                    <div class="news-image">
+                        <img src="https://images.unsplash.com/photo-1504711434969-e33886168f5c?w=400&h=240&fit=crop&auto=format&q=80" alt="AFRO American Newspapers Feature" style="border-radius: 0;">
+                    </div>
+                    <div class="news-content">
+                        <div class="news-source">AFRO American Newspapers</div>
+                        <h3 class="news-title">Morgan State University Transportation Innovations</h3>
+                        <p class="news-excerpt">
+                            Featured coverage of Morgan State's autonomous wheelchair innovations and the impact on accessibility 
+                            technology for the African American community and beyond.
+                        </p>
+                        <a href="https://afro.com/morgan-state-university-transportation-innovations/davidderick/" target="_blank" class="news-link">
+                            Read AFRO Article →
+                        </a>
+                    </div>
+                </article>
+
+                <article class="news-card fade-in">
+                    <div class="news-image">
+                        <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=400&h=240&fit=crop&auto=format&q=80" alt="Baltimore Business Journal Coverage" style="border-radius: 0;">
+                    </div>
+                    <div class="news-content">
+                        <div class="news-source">Baltimore Business Journal</div>
+                        <h3 class="news-title">Morgan State develops self-driving wheelchairs for airports</h3>
+                        <p class="news-excerpt">
+                            Business coverage of the innovative autonomous wheelchair technology being developed and tested 
+                            for commercial airport implementation.
+                        </p>
+                        <a href="https://www.bizjournals.com/baltimore/news/2025/07/31/morgan-state-bwi-airport-self-driving-wheelchair.html" target="_blank" class="news-link">
+                            Read Business Journal →
+                        </a>
+                    </div>
+                </article>
+
+                <article class="news-card fade-in">
+                    <div class="news-image">
+                        <img src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=400&h=240&fit=crop&auto=format&q=80" alt="Claby Robot Innovation" style="border-radius: 0;">
+                    </div>
+                    <div class="news-content">
+                        <div class="news-source">Punch Newspapers & YEN.com.gh</div>
+                        <h3 class="news-title">Ghanaian Students Showcase Robot for Feeding People</h3>
+                        <p class="news-excerpt">
+                            International coverage of innovative Claby robot designed to assist people without hands, 
+                            showcasing African innovation in assistive technology.
+                        </p>
+                        <a href="https://punchng.com/innovative-ghanaian-students-showcase-robot-feeding-people-without-hands/" target="_blank" class="news-link">
+                            Read Punch News →
+                        </a>
+                        <br><br>
+                        <a href="https://yen.com.gh/people/200928-knust-ucc-students-invent-robot-feed-people-hands/" target="_blank" class="news-link">
+                            Read YEN.com.gh →
+                        </a>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Publications Section -->
+    <section id="publications" class="section" style="background: var(--gray-50);">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Research Publications</h2>
+                <p class="section-subtitle">
+                    Research contributions to the fields of AI, machine learning, and computer vision
+                </p>
+            </div>
+
+            <div class="publications-grid">
+                <article class="publication-card fade-in">
+                    <div class="publication-header">
+                        <div class="publication-type">Journal Paper</div>
+                        <div class="publication-year">2024</div>
+                    </div>
+                    <h3 class="publication-title">ELT: Easy Label Trainer</h3>
+                    <p class="publication-authors">
+                        <strong>David Nyarko</strong>, Kelechi Nwachukwu, Anjolie Anthony, Kofi Nyarko
+                    </p>
+                    <p class="publication-venue">
+                        Springer Nature, Lecture Notes in Networks and Systems
+                    </p>
+                    <p class="publication-abstract">
+                        This paper presents ELT-Easy Label Trainer (ELT), a tool designed to automate and streamline 
+                        the process of labeling and training object detection models. It integrates advanced models like 
+                        YOLOv8, YOLOv9, and YOLO-World for robust object detection and segmentation using descriptive text prompts.
+                    </p>
+                    <div class="publication-links">
+                        <a href="https://link.springer.com/chapter/10.1007/978-3-031-82377-0_28" target="_blank" class="pub-link">
+                            📄 Read Paper
+                        </a>
+                        <a href="https://scholar.google.com/citations?hl=en&user=4kYkZPgAAAAJ&authuser=3" target="_blank" class="pub-link">
+                            🎓 Google Scholar
+                        </a>
+                    </div>
+                </article>
+
+
+                <article class="publication-card fade-in">
+                    <div class="publication-header">
+                        <div class="publication-type">Conference Abstract</div>
+                        <div class="publication-year">2023</div>
+                    </div>
+                    <h3 class="publication-title">Finding Indicators of Nuclear Activity in Open-Source Images using AI/ML</h3>
+                    <p class="publication-authors">
+                        R Alvarez, A Gazda, A Sarkar, <strong>David Nyarko</strong>, JJA Hastings, P Sivasankar
+                    </p>
+                    <p class="publication-venue">
+                        AGU Fall Meeting Abstracts 2023, IN33C-0735
+                    </p>
+                    <p class="publication-abstract">
+                        An interorganizational approach to increase nuclear safeguards through AI/ML analysis of 
+                        open-source satellite imagery for detecting indicators of nuclear activity.
+                    </p>
+                    <div class="publication-links">
+                        <a href="https://ui.adsabs.harvard.edu/abs/2023AGUFMIN33C0735A/abstract" target="_blank" class="pub-link">
+                            📄 ADS Abstract
+                        </a>
+                    </div>
+                </article>
+
+                <article class="publication-card fade-in">
+                    <div class="publication-header">
+                        <div class="publication-type">Conference Abstract</div>
+                        <div class="publication-year">2023</div>
+                    </div>
+                    <h3 class="publication-title">Leveraging Synthetic Image Data for Real-World Applications</h3>
+                    <p class="publication-authors">
+                        R Alvarez, JJA Hastings, A Gazda, A Sarkar, P Sivasankar, <strong>David Nyarko</strong>
+                    </p>
+                    <p class="publication-venue">
+                        AGU Fall Meeting Abstracts 2023, GC21F-0976
+                    </p>
+                    <p class="publication-abstract">
+                        Enhancing nuclear safeguards and capabilities through AI/ML by leveraging synthetic image data 
+                        for real-world applications in security and monitoring systems.
+                    </p>
+                    <div class="publication-links">
+                        <a href="https://ui.adsabs.harvard.edu/abs/2023AGUFMGC21F0976A/abstract" target="_blank" class="pub-link">
+                            📄 ADS Abstract
+                        </a>
+                    </div>
+                </article>
+
+                <article class="publication-card fade-in">
+                    <div class="publication-header">
+                        <div class="publication-type">Research Report</div>
+                        <div class="publication-year">2023</div>
+                    </div>
+                    <h3 class="publication-title">FDL 2023 Research Contributions</h3>
+                    <p class="publication-authors">
+                        <strong>David Nyarko</strong> and SETI Institute FDL Team
+                    </p>
+                    <p class="publication-venue">
+                        SETI Institute & U.S. Department of Energy
+                    </p>
+                    <p class="publication-abstract">
+                        Research contributions to the Frontier Development Lab (FDL) 2023 program, focusing on applied 
+                        artificial intelligence and machine learning for space science applications. Recognized for 
+                        outstanding performance and achievements.
+                    </p>
+                    <div class="publication-links">
+                        <a href="https://www.calameo.com/read/00481236380ca62980a88" target="_blank" class="pub-link">
+                            📖 View Publication
+                        </a>
+                    </div>
+                </article>
+
+                <article class="publication-card fade-in">
+                    <div class="publication-header">
+                        <div class="publication-type">Open Source</div>
+                        <div class="publication-year">2024</div>
+                    </div>
+                    <h3 class="publication-title">edge-tpu-silva Python Library</h3>
+                    <p class="publication-authors">
+                        <strong>David Nyarko</strong> (Creator and Maintainer)
+                    </p>
+                    <p class="publication-venue">
+                        Open-Source Python Library for Edge Computing
+                    </p>
+                    <p class="publication-abstract">
+                        A Python open-source library that helps run large models on Edge Computers, enabling efficient 
+                        execution of computer vision tasks on resource-constrained devices. Pioneered efficient AI deployment 
+                        for edge computing applications.
+                    </p>
+                    <div class="publication-links">
+                        <a href="https://github.com/DAVIDNYARKO123" target="_blank" class="pub-link">
+                            💻 GitHub Repository
+                        </a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Achievements Section -->
+    <section id="achievements" class="section achievements">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Key Achievements</h2>
+                <p class="section-subtitle">
+                    Breakthrough innovations and recognition demonstrating technical excellence and real-world impact
+                </p>
+            </div>
+
+            <div class="achievements-grid">
+                <div class="achievement-card fade-in">
+                    <div class="achievement-icon">💰</div>
+                    <div class="achievement-value">$100K</div>
+                    <h3 class="achievement-title">Innovation Pitch Competition Winner</h3>
+                    <p class="achievement-description">
+                        $100,000 seed funding - Capital One/Delaware State University Innovation Pitch Competition (AgroVision)
+                    </p>
+                </div>
+
+                <div class="achievement-card fade-in">
+                    <div class="achievement-icon">🏆</div>
+                    <div class="achievement-value">1st Place</div>
+                    <h3 class="achievement-title">MIT AI & Education Summit</h3>
+                    <p class="achievement-description">
+                        1st Place Winner - MIT AI & Education Summit Hack the Climate Challenge (ThermaWise project)
+                    </p>
+                </div>
+
+                <div class="achievement-card fade-in">
+                    <div class="achievement-icon">🥇</div>
+                    <div class="achievement-value">1st Place</div>
+                    <h3 class="achievement-title">National Symposium on Equitable AI</h3>
+                    <p class="achievement-description">
+                        1st Place, Poster Presentation - 2025 National Symposium on Equitable AI, CEAMLS
+                    </p>
+                </div>
+
+                <div class="achievement-card fade-in">
+                    <div class="achievement-icon">🏆</div>
+                    <div class="achievement-value">$2K</div>
+                    <h3 class="achievement-title">Morgan TechFest 2024 Winner</h3>
+                    <p class="achievement-description">
+                        1st Place, Morgan TechFest 2024 Innovation Expo - $2,000 prize for outstanding innovation
+                    </p>
+                </div>
+
+                <div class="achievement-card fade-in">
+                    <div class="achievement-icon">🥈</div>
+                    <div class="achievement-value">2nd Place</div>
+                    <h3 class="achievement-title">Emory Health AI Datathon</h3>
+                    <p class="achievement-description">
+                        2nd Place Winner, Emory University Health AI Datathon 2024 (12 teams competed)
+                    </p>
+                </div>
+
+                <div class="achievement-card fade-in">
+                    <div class="achievement-icon">🏅</div>
+                    <div class="achievement-value">Health AI</div>
+                    <h3 class="achievement-title">Emory Summer School Certificate</h3>
+                    <p class="achievement-description">
+                        Certificate of Participation, Health AI Summer School, Symposium & Datathon @ Emory 2024
+                    </p>
+                </div>
+
+                <div class="achievement-card fade-in">
+                    <div class="achievement-icon">🛰️</div>
+                    <div class="achievement-value">SETI</div>
+                    <h3 class="achievement-title">FDL Certificate of Achievement</h3>
+                    <p class="achievement-description">
+                        Outstanding Performance - FDL 2023 & U.S. Department of Energy, SETI Institute
+                    </p>
+                </div>
+
+                <div class="achievement-card fade-in">
+                    <div class="achievement-icon">🎓</div>
+                    <div class="achievement-value">Ghana</div>
+                    <h3 class="achievement-title">Best Student in Engineering</h3>
+                    <p class="achievement-description">
+                        Winner, Best Student in Engineering - Ghana Tertiary Awards 2020
+                    </p>
+                </div>
+
+                <div class="achievement-card fade-in">
+                    <div class="achievement-icon">⭐</div>
+                    <div class="achievement-value">Rising</div>
+                    <h3 class="achievement-title">Rising Star in Embedded Programming</h3>
+                    <p class="achievement-description">
+                        Winner, Rising Star in Embedded Programming - PHYSAG Excellence Awards 2021
+                    </p>
+                </div>
+
+                <div class="achievement-card fade-in">
+                    <div class="achievement-icon">🏅</div>
+                    <div class="achievement-value">UCC</div>
+                    <h3 class="achievement-title">Most Innovative Student</h3>
+                    <p class="achievement-description">
+                        Winner, Most Innovative Engineering Physics Student - UCC Dean's Award 2017
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section contact">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Let's Work Together</h2>
+                <p class="section-subtitle">
+                    Ready to discuss innovative AI solutions, research collaborations, or career opportunities?
+                </p>
+            </div>
+
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Get In Touch</h3>
+                    
+                    <div class="contact-item">
+                        <div class="contact-item-icon">📧</div>
+                        <div>
+                            <div>Email</div>
+                            <div style="color: var(--white); font-weight: 600;">danya3@morgan.edu</div>
+                        </div>
+                    </div>
+
+
+                    <div class="contact-item">
+                        <div class="contact-item-icon">📍</div>
+                        <div>
+                            <div>Location</div>
+                            <div style="color: var(--white); font-weight: 600;">Baltimore, Maryland, USA</div>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-item-icon">🏛️</div>
+                        <div>
+                            <div>Institution</div>
+                            <div style="color: var(--white); font-weight: 600;">Morgan State University</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-cta">
+                    <h3>Ready to Connect?</h3>
+                    <p>
+                        Whether you're interested in research collaborations, innovative AI projects, 
+                        or exploring career opportunities, I'd love to hear from you.
+                    </p>
+                    
+                    <div class="contact-buttons">
+                        <a href="mailto:danya3@morgan.edu" class="btn btn-white">Send Email</a>
+                        <a href="https://www.linkedin.com/in/david-nyarko-766974163" target="_blank" class="btn btn-outline">LinkedIn</a>
+                        <a href="https://github.com/DAVIDNYARKO123" target="_blank" class="btn btn-outline">GitHub</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-social">
+                <a href="https://github.com/DAVIDNYARKO123" target="_blank" class="social-link">
+                    <span style="font-size: 20px;">💻</span>
+                </a>
+            </div>
+            
+            <p class="footer-text">
+                © 2025 David Nyarko. All rights reserved.
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add scroll effect to navbar
+        let lastScrollTop = 0;
+        window.addEventListener('scroll', () => {
+            const navbar = document.querySelector('nav');
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            
+            if (scrollTop > 100) {
+                navbar.style.background = 'rgba(255, 255, 255, 0.98)';
+                navbar.style.backdropFilter = 'blur(20px)';
+                navbar.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.1)';
+            } else {
+                navbar.style.background = 'rgba(255, 255, 255, 0.95)';
+                navbar.style.boxShadow = 'none';
+            }
+            
+            lastScrollTop = scrollTop;
+        });
+
+        // Add entrance animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe all fade-in elements
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
