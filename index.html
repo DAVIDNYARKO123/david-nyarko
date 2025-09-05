@@ -143,7 +143,21 @@
         /* Hero Section */
         .hero {
             padding: 120px 0 80px;
-            background: var(--white);
+            background: linear-gradient(135deg, var(--white) 0%, var(--gray-50) 100%);
+            position: relative;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 80%, rgba(0, 0, 0, 0.02) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(0, 0, 0, 0.02) 0%, transparent 50%);
+            pointer-events: none;
         }
 
         .hero-container {
@@ -151,6 +165,8 @@
             grid-template-columns: 1fr 400px;
             gap: 80px;
             align-items: center;
+            position: relative;
+            z-index: 1;
         }
 
         .hero-content h1 {
@@ -182,10 +198,24 @@
             display: flex;
             gap: 40px;
             margin-bottom: 48px;
+            padding: 32px 0;
+            border-top: 1px solid var(--gray-200);
+            border-bottom: 1px solid var(--gray-200);
         }
 
         .stat {
             text-align: left;
+            position: relative;
+        }
+
+        .stat:not(:last-child)::after {
+            content: '';
+            position: absolute;
+            right: -20px;
+            top: 10%;
+            bottom: 10%;
+            width: 1px;
+            background: var(--gray-300);
         }
 
         .stat-number {
@@ -195,6 +225,10 @@
             display: block;
             line-height: 1;
             margin-bottom: 8px;
+            background: linear-gradient(135deg, var(--black) 0%, var(--gray-700) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
 
         .stat-label {
@@ -297,70 +331,211 @@
 
         /* About Section */
         .about {
-            background: var(--gray-50);
+            background: linear-gradient(135deg, var(--gray-50) 0%, var(--white) 100%);
+            position: relative;
+        }
+
+        .about::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 80% 20%, rgba(0, 0, 0, 0.02) 0%, transparent 50%);
+            pointer-events: none;
         }
 
         .about-content {
-            display: grid;
-            grid-template-columns: 400px 1fr;
-            gap: 80px;
-            align-items: center;
+            display: flex;
+            flex-direction: column;
+            gap: 60px;
+            position: relative;
+            z-index: 1;
         }
 
-        .about-image {
-            background: var(--gray-200);
-            border-radius: 16px;
-            height: 500px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+        .about-hero {
+            background: 
+                linear-gradient(145deg, var(--white) 0%, var(--gray-50) 50%, var(--white) 100%),
+                linear-gradient(45deg, rgba(0, 0, 0, 0.01) 0%, transparent 50%, rgba(0, 0, 0, 0.01) 100%);
+            border: 1px solid rgba(0, 0, 0, 0.06);
+            border-radius: 40px;
+            padding: 80px 60px;
+            box-shadow: 
+                0 32px 80px rgba(0, 0, 0, 0.08),
+                0 16px 40px rgba(0, 0, 0, 0.04),
+                0 8px 20px rgba(0, 0, 0, 0.02),
+                inset 0 1px 0 rgba(255, 255, 255, 0.9),
+                inset 0 -1px 0 rgba(0, 0, 0, 0.02);
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
             position: relative;
             overflow: hidden;
         }
 
-        .about-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            border-radius: 16px;
+        .about-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                repeating-linear-gradient(
+                    45deg,
+                    transparent,
+                    transparent 40px,
+                    rgba(0, 0, 0, 0.01) 40px,
+                    rgba(0, 0, 0, 0.01) 80px
+                ),
+                radial-gradient(circle at 30% 20%, rgba(0, 0, 0, 0.015) 0%, transparent 60%),
+                radial-gradient(circle at 70% 80%, rgba(0, 0, 0, 0.015) 0%, transparent 60%);
+            border-radius: 40px;
+            opacity: 1;
+            pointer-events: none;
         }
 
-        .about-text {
-            max-width: 600px;
+        .about-hero::after {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: conic-gradient(
+                from 0deg at 50% 50%,
+                rgba(0, 0, 0, 0.06) 0deg,
+                transparent 90deg,
+                rgba(0, 0, 0, 0.04) 180deg,
+                transparent 270deg,
+                rgba(0, 0, 0, 0.06) 360deg
+            );
+            border-radius: 42px;
+            opacity: 0;
+            transition: all 0.6s ease;
+            z-index: -1;
+            animation: rotateBorder 20s linear infinite;
         }
 
-        .about-text h3 {
-            font-size: 32px;
-            font-weight: 800;
+        .about-hero:hover {
+            transform: translateY(-16px) scale(1.02);
+            box-shadow: 
+                0 48px 120px rgba(0, 0, 0, 0.12),
+                0 24px 60px rgba(0, 0, 0, 0.08),
+                0 12px 30px rgba(0, 0, 0, 0.04),
+                inset 0 2px 0 rgba(255, 255, 255, 1),
+                inset 0 -1px 0 rgba(0, 0, 0, 0.03);
+        }
+
+        .about-hero:hover::after {
+            opacity: 1;
+        }
+
+        .about-hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .about-hero h3 {
+            font-size: 54px;
+            font-weight: 900;
+            margin-bottom: 32px;
+            letter-spacing: -0.03em;
+            position: relative;
+            background: linear-gradient(135deg, var(--black) 0%, var(--gray-700) 50%, var(--black) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+        }
+
+        .about-hero h3::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, var(--gray-300), transparent);
+            border-radius: 2px;
+        }
+
+        .about-hero-intro {
+            font-size: 26px;
+            font-weight: 700;
+            margin-bottom: 28px;
+            color: var(--gray-800);
+            line-height: 1.3;
+            background: linear-gradient(135deg, var(--gray-800) 0%, var(--gray-600) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .about-hero-description {
+            font-size: 19px;
+            line-height: 1.65;
+            color: var(--gray-600);
+            font-weight: 450;
+            max-width: 720px;
+            margin: 0 auto;
+        }
+
+
+        .about-achievements {
+            margin-top: 40px;
+        }
+
+        .about-achievements h4 {
+            font-size: 24px;
+            font-weight: 700;
             color: var(--black);
             margin-bottom: 24px;
-            letter-spacing: -0.02em;
-        }
-
-        .about-text p {
-            font-size: 18px;
-            color: var(--gray-600);
-            line-height: 1.7;
-            margin-bottom: 32px;
+            letter-spacing: -0.01em;
         }
 
         .about-highlights {
             list-style: none;
+            display: grid;
+            gap: 12px;
         }
 
         .about-highlights li {
-            font-size: 16px;
-            color: var(--gray-600);
-            margin-bottom: 12px;
-            padding-left: 24px;
+            font-size: 15px;
+            color: var(--gray-700);
+            padding: 12px 20px;
             position: relative;
+            background: var(--white);
+            border-radius: 8px;
+            border-left: 3px solid var(--black);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+            transition: all 0.3s ease;
+        }
+
+        .about-highlights li:hover {
+            transform: translateX(4px);
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
         }
 
         .about-highlights li::before {
-            content: '→';
+            content: '✓';
             position: absolute;
-            left: 0;
-            color: var(--black);
+            left: -12px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 20px;
+            height: 20px;
+            background: var(--black);
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
             font-weight: 600;
         }
 
@@ -555,43 +730,107 @@
 
         .achievements-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
             gap: 32px;
         }
 
         .achievement-card {
-            background: var(--white);
+            background: linear-gradient(145deg, var(--white) 0%, var(--gray-50) 100%);
             border: 1px solid var(--gray-200);
-            border-radius: 16px;
-            padding: 40px;
+            border-radius: 24px;
+            padding: 40px 32px;
             text-align: center;
-            transition: all 0.3s ease;
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+            box-shadow: 
+                0 8px 32px rgba(0, 0, 0, 0.08),
+                0 2px 8px rgba(0, 0, 0, 0.04);
+        }
+
+        .achievement-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: conic-gradient(from 0deg, transparent, rgba(0, 0, 0, 0.05), transparent, rgba(0, 0, 0, 0.05));
+            opacity: 0;
+            transition: opacity 0.5s ease;
+            pointer-events: none;
+        }
+
+        .achievement-card:hover::before {
+            opacity: 1;
+            animation: rotate 3s linear infinite;
+        }
+
+        .achievement-card::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(145deg, rgba(255, 255, 255, 0.1) 0%, rgba(0, 0, 0, 0.02) 100%);
+            border-radius: 24px;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .achievement-card:hover::after {
+            opacity: 1;
         }
 
         .achievement-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            transform: translateY(-12px) scale(1.02);
+            box-shadow: 
+                0 25px 60px rgba(0, 0, 0, 0.2),
+                0 8px 24px rgba(0, 0, 0, 0.1);
             border-color: var(--gray-300);
         }
 
         .achievement-icon {
             width: 80px;
             height: 80px;
-            background: var(--black);
-            border-radius: 50%;
+            background: linear-gradient(135deg, var(--black) 0%, var(--gray-600) 100%);
+            border-radius: 16px;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin: 0 auto 24px;
-            font-size: 32px;
+            font-size: 18px;
+            font-weight: 800;
             color: var(--white);
+            margin: 0 auto 24px;
+            box-shadow: 
+                0 12px 32px rgba(0, 0, 0, 0.2),
+                0 4px 12px rgba(0, 0, 0, 0.1);
+            position: relative;
+            z-index: 2;
+            transition: all 0.3s ease;
+            text-align: center;
+            line-height: 1.2;
+        }
+
+        .achievement-card:hover .achievement-icon {
+            transform: scale(1.1) rotate(5deg);
+            box-shadow: 
+                0 16px 40px rgba(0, 0, 0, 0.3),
+                0 6px 16px rgba(0, 0, 0, 0.15);
         }
 
         .achievement-value {
             font-size: 36px;
             font-weight: 900;
-            color: var(--black);
+            background: linear-gradient(135deg, var(--black) 0%, var(--gray-500) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
             margin-bottom: 8px;
+            line-height: 1.1;
+            position: relative;
+            z-index: 2;
         }
 
         .achievement-title {
@@ -599,60 +838,245 @@
             font-weight: 700;
             color: var(--black);
             margin-bottom: 16px;
+            line-height: 1.3;
+            position: relative;
+            z-index: 2;
         }
 
         .achievement-description {
             font-size: 16px;
             color: var(--gray-600);
             line-height: 1.6;
+            margin: 0 0 20px 0;
+            position: relative;
+            z-index: 2;
+        }
+
+        .achievement-logos {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 16px;
+            margin-top: auto;
+            padding-top: 16px;
+            border-top: 1px solid var(--gray-200);
+            position: relative;
+            z-index: 2;
+        }
+
+        .achievement-logo {
+            height: 32px;
+            width: auto;
+            max-width: 80px;
+            object-fit: contain;
+            opacity: 0.8;
+            transition: all 0.3s ease;
+            filter: grayscale(100%);
+        }
+
+        .achievement-logo.gta-logo {
+            height: 80px;
+            max-width: 200px;
+        }
+
+        .achievement-logo.ucc-logo,
+        .achievement-logo.capital-one-logo,
+        .achievement-logo.morgan-logo,
+        .achievement-logo.ceamls-logo,
+        .achievement-logo.mit-logo {
+            height: 50px;
+            max-width: 150px;
+        }
+
+        .achievement-logo.capital-one-logo,
+        .achievement-logo.ceamls-logo {
+            background: #333;
+            padding: 8px;
+            border-radius: 8px;
+        }
+
+        .achievement-card:hover .achievement-logo {
+            opacity: 1;
+            filter: grayscale(0%);
+            transform: scale(1.05);
+        }
+
+        .achievement-card {
+            display: flex;
+            flex-direction: column;
+            min-height: 280px;
+        }
+
+        @keyframes rotate {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        @keyframes rotateBorder {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        /* Moving Logos Section */
+        .moving-logos {
+            background: #f8f9fa;
+            padding: 60px 0;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .logos-container {
+            overflow: hidden;
+            position: relative;
+        }
+
+        .logos-track {
+            display: flex;
+            gap: 80px;
+            animation: scroll-logos 35s linear infinite;
+        }
+
+        .logo-item {
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0.7;
+            transition: opacity 0.3s ease;
+        }
+
+        .logo-item:hover {
+            opacity: 1;
+        }
+
+        .logo-item img {
+            height: 60px;
+            max-width: 180px;
+            object-fit: contain;
+            transition: opacity 0.3s ease;
+        }
+
+        /* Make GTA and MIT logos bigger in scrolling section */
+        .logo-item:nth-child(8) img,
+        .logo-item:nth-child(9) img,
+        .logo-item:nth-child(17) img,
+        .logo-item:nth-child(18) img,
+        .logo-item:nth-child(26) img,
+        .logo-item:nth-child(27) img,
+        .logo-item:nth-child(35) img,
+        .logo-item:nth-child(36) img,
+        .logo-item:nth-child(44) img,
+        .logo-item:nth-child(45) img,
+        .logo-item:nth-child(53) img,
+        .logo-item:nth-child(54) img,
+        .logo-item:nth-child(62) img,
+        .logo-item:nth-child(63) img,
+        .logo-item:nth-child(71) img,
+        .logo-item:nth-child(72) img,
+        .logo-item:nth-child(80) img,
+        .logo-item:nth-child(81) img,
+        .logo-item:nth-child(89) img,
+        .logo-item:nth-child(90) img {
+            height: 80px;
+            max-width: 220px;
+        }
+
+        /* Special styling for white logos - Capital One and CEAMLS only */
+        .logo-item:nth-child(3) img,
+        .logo-item:nth-child(4) img,
+        .logo-item:nth-child(12) img,
+        .logo-item:nth-child(13) img,
+        .logo-item:nth-child(21) img,
+        .logo-item:nth-child(22) img,
+        .logo-item:nth-child(30) img,
+        .logo-item:nth-child(31) img,
+        .logo-item:nth-child(39) img,
+        .logo-item:nth-child(40) img,
+        .logo-item:nth-child(48) img,
+        .logo-item:nth-child(49) img,
+        .logo-item:nth-child(57) img,
+        .logo-item:nth-child(58) img,
+        .logo-item:nth-child(66) img,
+        .logo-item:nth-child(67) img,
+        .logo-item:nth-child(75) img,
+        .logo-item:nth-child(76) img,
+        .logo-item:nth-child(84) img,
+        .logo-item:nth-child(85) img {
+            background: #333;
+            padding: 12px;
+            border-radius: 8px;
+        }
+
+        @keyframes scroll-logos {
+            0% {
+                transform: translateX(0%);
+            }
+            100% {
+                transform: translateX(-600%);
+            }
         }
 
         /* Contact Section */
         .contact {
             background: var(--black);
             color: var(--white);
+            padding: 40px 0;
+        }
+
+        .contact .section-header {
+            margin-bottom: 32px;
         }
 
         .contact .section-title {
             color: var(--white);
+            font-size: 36px;
         }
 
         .contact .section-subtitle {
             color: var(--gray-400);
+            font-size: 18px;
         }
 
         .contact-content {
             display: grid;
-            grid-template-columns: 1fr 400px;
-            gap: 80px;
-            align-items: start;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
         }
 
         .contact-info h3 {
-            font-size: 24px;
+            font-size: 20px;
             font-weight: 700;
             color: var(--white);
-            margin-bottom: 32px;
+            margin-bottom: 24px;
         }
 
         .contact-item {
             display: flex;
             align-items: center;
-            gap: 16px;
-            margin-bottom: 24px;
+            gap: 12px;
+            margin-bottom: 16px;
             color: var(--gray-300);
-            font-size: 16px;
+            font-size: 15px;
         }
 
         .contact-item-icon {
-            width: 48px;
-            height: 48px;
+            width: 40px;
+            height: 40px;
             background: var(--gray-800);
-            border-radius: 12px;
+            border-radius: 8px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 20px;
+            font-size: 18px;
             color: var(--white);
         }
 
@@ -661,23 +1085,23 @@
         }
 
         .contact-cta h3 {
-            font-size: 32px;
-            font-weight: 800;
+            font-size: 24px;
+            font-weight: 700;
             color: var(--white);
-            margin-bottom: 24px;
+            margin-bottom: 16px;
             letter-spacing: -0.02em;
         }
 
         .contact-cta p {
-            font-size: 18px;
+            font-size: 16px;
             color: var(--gray-400);
-            margin-bottom: 40px;
+            margin-bottom: 24px;
             line-height: 1.6;
         }
 
         .contact-buttons {
             display: flex;
-            gap: 16px;
+            gap: 12px;
             justify-content: center;
             flex-wrap: wrap;
         }
@@ -707,51 +1131,75 @@
 
         /* Footer */
         footer {
-            background: var(--gray-900);
+            background: var(--black);
             color: var(--gray-400);
-            padding: 60px 0;
+            padding: 32px 0;
             text-align: center;
+            border-top: 1px solid var(--gray-800);
         }
 
-        .footer-social {
+        .footer-content {
             display: flex;
-            gap: 16px;
-            justify-content: center;
-            margin-bottom: 32px;
-        }
-
-        .social-link {
-            width: 48px;
-            height: 48px;
-            background: var(--gray-800);
-            border-radius: 50%;
-            display: flex;
+            justify-content: space-between;
             align-items: center;
-            justify-content: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 24px;
+            align-items: center;
+        }
+
+        .footer-link {
             color: var(--gray-400);
             text-decoration: none;
-            font-size: 20px;
+            font-size: 15px;
+            font-weight: 500;
+            padding: 6px 12px;
+            border-radius: 4px;
             transition: all 0.3s ease;
         }
 
-        .social-link:hover {
-            background: var(--white);
-            color: var(--black);
-            transform: translateY(-2px);
+        .footer-link:hover {
+            color: var(--white);
+            background: var(--gray-800);
         }
 
         .footer-text {
             font-size: 14px;
             color: var(--gray-500);
+            margin: 0;
         }
 
         /* Responsive Design */
         @media (max-width: 1024px) {
             .hero-container,
-            .about-content,
             .contact-content {
                 grid-template-columns: 1fr;
-                gap: 60px;
+                gap: 40px;
+            }
+
+            .about-hero {
+                height: 350px;
+            }
+
+            .about-hero h3 {
+                font-size: 36px;
+            }
+
+            .about-hero-intro {
+                font-size: 20px;
+            }
+
+            .about-hero-description {
+                font-size: 16px;
+            }
+
+            .contact {
+                padding: 50px 0;
             }
 
             .hero-image,
@@ -782,6 +1230,20 @@
                 padding: 80px 0;
             }
 
+            /* Faster scrolling on mobile with adjusted positioning */
+            .logos-track {
+                animation: scroll-logos-mobile 35s linear infinite;
+            }
+
+            @keyframes scroll-logos-mobile {
+                0% {
+                    transform: translateX(0%);
+                }
+                100% {
+                    transform: translateX(-500%);
+                }
+            }
+
             .section-title {
                 font-size: 36px;
             }
@@ -809,6 +1271,16 @@
             .btn {
                 justify-content: center;
             }
+
+            .footer-content {
+                flex-direction: column;
+                gap: 16px;
+                text-align: center;
+            }
+
+            .footer-links {
+                gap: 16px;
+            }
         }
 
         @media (max-width: 480px) {
@@ -826,6 +1298,29 @@
 
             .section-title {
                 font-size: 28px;
+            }
+
+            .about-hero {
+                height: 300px;
+                border-radius: 16px;
+            }
+
+            .about-hero h3 {
+                font-size: 28px;
+                margin-bottom: 16px;
+            }
+
+            .about-hero-intro {
+                font-size: 18px;
+                margin-bottom: 16px;
+            }
+
+            .about-hero-description {
+                font-size: 15px;
+            }
+
+            .about-hero-content {
+                padding: 0 24px;
             }
         }
 
@@ -871,30 +1366,29 @@
             <div class="hero-container">
                 <div class="hero-content">
                     <h1>David Nyarko</h1>
-                    <p class="hero-subtitle">AI & Robotics Systems Engineer</p>
+                    <p class="hero-subtitle">Award-Winning AI & Robotics Engineer</p>
                     <p class="hero-description">
-                        Leading breakthrough innovations in autonomous systems and accessible technology. 
-                        Developing self-driving wheelchairs at BWI Airport and creating AI solutions that serve humanity.
+                        Graduate Research Lead and Doctoral Engineering student at Morgan State University. 
+                        Building breakthrough autonomous systems, winning $100K+ in competitions, and developing AI solutions that transform industries and serve humanity.
                     </p>
                     
                     <div class="hero-stats">
                         <div class="stat">
                             <span class="stat-number">$102K</span>
-                            <span class="stat-label">Total Prize Money</span>
+                            <span class="stat-label">Competition Winnings</span>
                         </div>
                         <div class="stat">
-                            <span class="stat-number">9</span>
+                            <span class="stat-number">10+</span>
                             <span class="stat-label">Major Awards</span>
                         </div>
                         <div class="stat">
-                            <span class="stat-number">4.0</span>
-                            <span class="stat-label">Perfect GPA</span>
+                            <span class="stat-number">BWI</span>
+                            <span class="stat-label">Airport Research</span>
                         </div>
                     </div>
 
                     <div class="hero-cta">
                         <a href="#contact" class="btn btn-primary">Get In Touch</a>
-                        <a href="EXIBITS/DavidNyarko Resume.pdf" target="_blank" class="btn btn-secondary">Download Resume</a>
                     </div>
                 </div>
 
@@ -905,39 +1399,313 @@
         </div>
     </section>
 
+    <!-- Moving Logos Section -->
+    <section class="moving-logos">
+        <div class="logos-container">
+            <div class="logos-track">
+                <div class="logo-item">
+                    <img src="images/emory1.png" alt="Emory University">
+                </div>
+                <div class="logo-item">
+                    <img src="images/emory2.png" alt="Emory University">
+                </div>
+                <div class="logo-item">
+                    <img src="images/capital one_ dsu.png" alt="Capital One & Delaware State University">
+                </div>
+                <div class="logo-item">
+                    <img src="images/ceamls.png" alt="CEAMLS">
+                </div>
+                <div class="logo-item">
+                    <img src="images/morgan.png" alt="Morgan State University">
+                </div>
+                <div class="logo-item">
+                    <img src="images/seti.png" alt="SETI Institute">
+                </div>
+                <div class="logo-item">
+                    <img src="images/ucc.png" alt="University of Cape Coast">
+                </div>
+                <div class="logo-item">
+                    <img src="images/ghana tertiary awards.png" alt="Ghana Tertiary Awards">
+                </div>
+                <div class="logo-item">
+                    <img src="images/mit.png" alt="MIT">
+                </div>
+                <!-- Duplicate logos for seamless loop -->
+                <div class="logo-item">
+                    <img src="images/emory1.png" alt="Emory University">
+                </div>
+                <div class="logo-item">
+                    <img src="images/emory2.png" alt="Emory University">
+                </div>
+                <div class="logo-item">
+                    <img src="images/capital one_ dsu.png" alt="Capital One & Delaware State University">
+                </div>
+                <div class="logo-item">
+                    <img src="images/ceamls.png" alt="CEAMLS">
+                </div>
+                <div class="logo-item">
+                    <img src="images/morgan.png" alt="Morgan State University">
+                </div>
+                <div class="logo-item">
+                    <img src="images/seti.png" alt="SETI Institute">
+                </div>
+                <div class="logo-item">
+                    <img src="images/ucc.png" alt="University of Cape Coast">
+                </div>
+                <div class="logo-item">
+                    <img src="images/ghana tertiary awards.png" alt="Ghana Tertiary Awards">
+                </div>
+                <div class="logo-item">
+                    <img src="images/mit.png" alt="MIT">
+                </div>
+                <!-- Set 3 -->
+                <div class="logo-item">
+                    <img src="images/emory1.png" alt="Emory University">
+                </div>
+                <div class="logo-item">
+                    <img src="images/emory2.png" alt="Emory University">
+                </div>
+                <div class="logo-item">
+                    <img src="images/capital one_ dsu.png" alt="Capital One & Delaware State University">
+                </div>
+                <div class="logo-item">
+                    <img src="images/ceamls.png" alt="CEAMLS">
+                </div>
+                <div class="logo-item">
+                    <img src="images/morgan.png" alt="Morgan State University">
+                </div>
+                <div class="logo-item">
+                    <img src="images/seti.png" alt="SETI Institute">
+                </div>
+                <div class="logo-item">
+                    <img src="images/ucc.png" alt="University of Cape Coast">
+                </div>
+                <div class="logo-item">
+                    <img src="images/ghana tertiary awards.png" alt="Ghana Tertiary Awards">
+                </div>
+                <div class="logo-item">
+                    <img src="images/mit.png" alt="MIT">
+                </div>
+                <!-- Set 4 -->
+                <div class="logo-item">
+                    <img src="images/emory1.png" alt="Emory University">
+                </div>
+                <div class="logo-item">
+                    <img src="images/emory2.png" alt="Emory University">
+                </div>
+                <div class="logo-item">
+                    <img src="images/capital one_ dsu.png" alt="Capital One & Delaware State University">
+                </div>
+                <div class="logo-item">
+                    <img src="images/ceamls.png" alt="CEAMLS">
+                </div>
+                <div class="logo-item">
+                    <img src="images/morgan.png" alt="Morgan State University">
+                </div>
+                <div class="logo-item">
+                    <img src="images/seti.png" alt="SETI Institute">
+                </div>
+                <div class="logo-item">
+                    <img src="images/ucc.png" alt="University of Cape Coast">
+                </div>
+                <div class="logo-item">
+                    <img src="images/ghana tertiary awards.png" alt="Ghana Tertiary Awards">
+                </div>
+                <div class="logo-item">
+                    <img src="images/mit.png" alt="MIT">
+                </div>
+                <!-- Set 5 -->
+                <div class="logo-item">
+                    <img src="images/emory1.png" alt="Emory University">
+                </div>
+                <div class="logo-item">
+                    <img src="images/emory2.png" alt="Emory University">
+                </div>
+                <div class="logo-item">
+                    <img src="images/capital one_ dsu.png" alt="Capital One & Delaware State University">
+                </div>
+                <div class="logo-item">
+                    <img src="images/ceamls.png" alt="CEAMLS">
+                </div>
+                <div class="logo-item">
+                    <img src="images/morgan.png" alt="Morgan State University">
+                </div>
+                <div class="logo-item">
+                    <img src="images/seti.png" alt="SETI Institute">
+                </div>
+                <div class="logo-item">
+                    <img src="images/ucc.png" alt="University of Cape Coast">
+                </div>
+                <div class="logo-item">
+                    <img src="images/ghana tertiary awards.png" alt="Ghana Tertiary Awards">
+                </div>
+                <div class="logo-item">
+                    <img src="images/mit.png" alt="MIT">
+                </div>
+                <!-- Set 6 -->
+                <div class="logo-item">
+                    <img src="images/emory1.png" alt="Emory University">
+                </div>
+                <div class="logo-item">
+                    <img src="images/emory2.png" alt="Emory University">
+                </div>
+                <div class="logo-item">
+                    <img src="images/capital one_ dsu.png" alt="Capital One & Delaware State University">
+                </div>
+                <div class="logo-item">
+                    <img src="images/ceamls.png" alt="CEAMLS">
+                </div>
+                <div class="logo-item">
+                    <img src="images/morgan.png" alt="Morgan State University">
+                </div>
+                <div class="logo-item">
+                    <img src="images/seti.png" alt="SETI Institute">
+                </div>
+                <div class="logo-item">
+                    <img src="images/ucc.png" alt="University of Cape Coast">
+                </div>
+                <div class="logo-item">
+                    <img src="images/ghana tertiary awards.png" alt="Ghana Tertiary Awards">
+                </div>
+                <div class="logo-item">
+                    <img src="images/mit.png" alt="MIT">
+                </div>
+                <!-- Set 7 -->
+                <div class="logo-item">
+                    <img src="images/emory1.png" alt="Emory University">
+                </div>
+                <div class="logo-item">
+                    <img src="images/emory2.png" alt="Emory University">
+                </div>
+                <div class="logo-item">
+                    <img src="images/capital one_ dsu.png" alt="Capital One & Delaware State University">
+                </div>
+                <div class="logo-item">
+                    <img src="images/ceamls.png" alt="CEAMLS">
+                </div>
+                <div class="logo-item">
+                    <img src="images/morgan.png" alt="Morgan State University">
+                </div>
+                <div class="logo-item">
+                    <img src="images/seti.png" alt="SETI Institute">
+                </div>
+                <div class="logo-item">
+                    <img src="images/ucc.png" alt="University of Cape Coast">
+                </div>
+                <div class="logo-item">
+                    <img src="images/ghana tertiary awards.png" alt="Ghana Tertiary Awards">
+                </div>
+                <div class="logo-item">
+                    <img src="images/mit.png" alt="MIT">
+                </div>
+                <!-- Set 8 -->
+                <div class="logo-item">
+                    <img src="images/emory1.png" alt="Emory University">
+                </div>
+                <div class="logo-item">
+                    <img src="images/emory2.png" alt="Emory University">
+                </div>
+                <div class="logo-item">
+                    <img src="images/capital one_ dsu.png" alt="Capital One & Delaware State University">
+                </div>
+                <div class="logo-item">
+                    <img src="images/ceamls.png" alt="CEAMLS">
+                </div>
+                <div class="logo-item">
+                    <img src="images/morgan.png" alt="Morgan State University">
+                </div>
+                <div class="logo-item">
+                    <img src="images/seti.png" alt="SETI Institute">
+                </div>
+                <div class="logo-item">
+                    <img src="images/ucc.png" alt="University of Cape Coast">
+                </div>
+                <div class="logo-item">
+                    <img src="images/ghana tertiary awards.png" alt="Ghana Tertiary Awards">
+                </div>
+                <div class="logo-item">
+                    <img src="images/mit.png" alt="MIT">
+                </div>
+                <!-- Set 9 -->
+                <div class="logo-item">
+                    <img src="images/emory1.png" alt="Emory University">
+                </div>
+                <div class="logo-item">
+                    <img src="images/emory2.png" alt="Emory University">
+                </div>
+                <div class="logo-item">
+                    <img src="images/capital one_ dsu.png" alt="Capital One & Delaware State University">
+                </div>
+                <div class="logo-item">
+                    <img src="images/ceamls.png" alt="CEAMLS">
+                </div>
+                <div class="logo-item">
+                    <img src="images/morgan.png" alt="Morgan State University">
+                </div>
+                <div class="logo-item">
+                    <img src="images/seti.png" alt="SETI Institute">
+                </div>
+                <div class="logo-item">
+                    <img src="images/ucc.png" alt="University of Cape Coast">
+                </div>
+                <div class="logo-item">
+                    <img src="images/ghana tertiary awards.png" alt="Ghana Tertiary Awards">
+                </div>
+                <div class="logo-item">
+                    <img src="images/mit.png" alt="MIT">
+                </div>
+                <!-- Set 10 -->
+                <div class="logo-item">
+                    <img src="images/emory1.png" alt="Emory University">
+                </div>
+                <div class="logo-item">
+                    <img src="images/emory2.png" alt="Emory University">
+                </div>
+                <div class="logo-item">
+                    <img src="images/capital one_ dsu.png" alt="Capital One & Delaware State University">
+                </div>
+                <div class="logo-item">
+                    <img src="images/ceamls.png" alt="CEAMLS">
+                </div>
+                <div class="logo-item">
+                    <img src="images/morgan.png" alt="Morgan State University">
+                </div>
+                <div class="logo-item">
+                    <img src="images/seti.png" alt="SETI Institute">
+                </div>
+                <div class="logo-item">
+                    <img src="images/ucc.png" alt="University of Cape Coast">
+                </div>
+                <div class="logo-item">
+                    <img src="images/ghana tertiary awards.png" alt="Ghana Tertiary Awards">
+                </div>
+                <div class="logo-item">
+                    <img src="images/mit.png" alt="MIT">
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- About Section -->
     <section id="about" class="section about">
         <div class="container">
             <div class="about-content">
-                <div class="about-image">
-                    <img src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=400&h=500&fit=crop&auto=format&q=80" alt="Autonomous Wheelchair Technology" style="border-radius: 16px;">
+                <div class="about-hero">
+                    <div class="about-hero-content">
+                        <h3>About Me</h3>
+                        <p class="about-hero-intro">
+                            Award-winning AI engineer and Doctoral Engineering student at Morgan State University.
+                        </p>
+                        <p class="about-hero-description">
+                            With over $102K in competition winnings and recognition from top-tier institutions 
+                            including MIT, SETI Institute, and Capital One, my breakthrough work in autonomous systems 
+                            and accessible technology has been featured in major media outlets and is making real-world 
+                            impact through innovative solutions that serve humanity.
+                        </p>
+                    </div>
                 </div>
+
                 
-                <div class="about-text">
-                    <h3>About Me</h3>
-                    <p>
-                        Award-winning AI engineer and Doctoral Engineering student at Morgan State University, 
-                        with over $102K in competition winnings and recognition from top-tier institutions 
-                        including MIT, SETI Institute, and Capital One.
-                    </p>
-                    <p>
-                        My breakthrough work in autonomous systems and accessible technology has been featured 
-                        in major media outlets and is making real-world impact through innovative solutions 
-                        that serve humanity.
-                    </p>
-                    
-                    <ul class="about-highlights">
-                        <li>$100K Winner - Capital One Innovation Venture Competition (AgroVision AI farming system)</li>
-                        <li>Leading autonomous wheelchair testing at BWI Airport (5-year research project)</li>
-                        <li>1st Place Winner - 2025 National Symposium on Equitable AI</li>
-                        <li>1st Place Winner - MIT AI & Education Summit Climate Challenge</li>
-                        <li>1st Place Winner - Morgan TechFest 2024 Innovation Expo ($2K prize)</li>
-                        <li>SETI Institute Machine Learning Engineer with US Department of Energy recognition</li>
-                        <li>Published researcher in Springer Nature (ELT: Easy Label Trainer)</li>
-                        <li>Featured in Baltimore Banner, WMAR News, Business Journal, and NSBE</li>
-                        <li>Perfect 4.0 GPA in Doctoral Engineering program</li>
-                    </ul>
-                </div>
             </div>
         </div>
     </section>
@@ -978,7 +1746,7 @@
                         <div class="news-source">Morgan State University</div>
                         <h3 class="news-title">Graduate Students Win First Place Victory, Earn $100K Top Prize</h3>
                         <p class="news-excerpt">
-                            Led Team AgroVision to victory with AI-powered modular hydroponic farming system, 
+                            Graduate Research Lead of Team AgroVision, achieving victory with AI-powered modular hydroponic farming system, 
                             securing $100,000 in seed funding from Capital One/Delaware State University competition.
                         </p>
                         <a href="https://www.morgan.edu/news/graduate-students-win-1st-place-at-national-innovation-venture-competition" target="_blank" class="news-link">
@@ -987,6 +1755,10 @@
                         <br><br>
                         <a href="https://www.delawarepublic.org/education/2025-04-14/hbcu-students-developing-agritech-solutions-win-money-and-get-tips-on-moving-their-ideas-forward" target="_blank" class="news-link">
                             Delaware Public Media →
+                        </a>
+                        <br><br>
+                        <a href="https://www.verticalfarmdaily.com/article/9744144/us-md-students-win-100k-prize-for-ai-powered-modular-hydroponic-farming-system/" target="_blank" class="news-link">
+                            Vertical Farm Daily →
                         </a>
                     </div>
                 </article>
@@ -1016,7 +1788,7 @@
                         <div class="news-source">The Baltimore Banner</div>
                         <h3 class="news-title">Self-driving wheelchairs could someday transport passengers with disabilities to BWI's gates</h3>
                         <p class="news-excerpt">
-                            Leading a 5-year Morgan State University project developing autonomous wheelchairs for airport accessibility, 
+                            Graduate Research Lead on a 5-year Morgan State University project developing autonomous wheelchairs for airport accessibility, 
                             with Phase 3 testing at BWI Airport demonstrating breakthrough mobility solutions.
                         </p>
                         <a href="https://www.thebaltimorebanner.com/community/transportation/autonomous-wheelchairs-bwi-artificial-intelligence-JLNZ7UHVDBDJDCMSDXGDXJOACQ/" target="_blank" class="news-link">
@@ -1088,6 +1860,152 @@
         </div>
     </section>
 
+    <!-- Achievements Section -->
+    <section id="achievements" class="section achievements">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Key Achievements</h2>
+                <p class="section-subtitle">
+                    Breakthrough innovations and recognition demonstrating technical excellence and real-world impact
+                </p>
+            </div>
+
+            <div class="achievements-grid">
+                <div class="achievement-card fade-in">
+                    <div class="achievement-icon">1st<br>PLACE</div>
+                    <div class="achievement-value">$100K</div>
+                    <h3 class="achievement-title">Innovation Pitch Competition Winner</h3>
+                    <p class="achievement-description">
+                        <strong>Position:</strong> Team Lead & Technical Architect<br>
+                        $100,000 seed funding - Capital One/Delaware State University Innovation Pitch Competition (AgroVision)
+                    </p>
+                    <div class="achievement-logos">
+                        <img src="images/capital one_ dsu.png" alt="Capital One & Delaware State University Logo" class="achievement-logo capital-one-logo">
+                    </div>
+                </div>
+
+                <div class="achievement-card fade-in">
+                    <div class="achievement-icon">1st<br>PLACE</div>
+                    <div class="achievement-value">MIT</div>
+                    <h3 class="achievement-title">MIT AI & Education Summit</h3>
+                    <p class="achievement-description">
+                        <strong>Position:</strong> Technical Lead & AI Developer<br>
+                        1st Place Winner - MIT AI & Education Summit Hack the Climate Challenge (ThermaWise project)
+                    </p>
+                    <div class="achievement-logos">
+                        <img src="images/mit.png" alt="MIT Logo" class="achievement-logo mit-logo">
+                    </div>
+                </div>
+
+                <div class="achievement-card fade-in">
+                    <div class="achievement-icon">1st<br>PLACE</div>
+                    <div class="achievement-value">CEAMLS</div>
+                    <h3 class="achievement-title">National Symposium on Equitable AI</h3>
+                    <p class="achievement-description">
+                        <strong>Position:</strong> Research Lead & Presenter<br>
+                        1st Place, Poster Presentation - 2025 National Symposium on Equitable AI, CEAMLS
+                    </p>
+                    <div class="achievement-logos">
+                        <img src="images/ceamls.png" alt="CEAMLS Logo" class="achievement-logo ceamls-logo">
+                    </div>
+                </div>
+
+                <div class="achievement-card fade-in">
+                    <div class="achievement-icon">1st<br>PLACE</div>
+                    <div class="achievement-value">$2K</div>
+                    <h3 class="achievement-title">Morgan TechFest 2024 Winner</h3>
+                    <p class="achievement-description">
+                        <strong>Position:</strong> Individual Innovator & Presenter<br>
+                        1st Place, Morgan TechFest 2024 Innovation Expo - $2,000 prize for outstanding innovation
+                    </p>
+                    <div class="achievement-logos">
+                        <img src="images/morgan.png" alt="Morgan State University Logo" class="achievement-logo morgan-logo">
+                    </div>
+                </div>
+
+                <div class="achievement-card fade-in">
+                    <div class="achievement-icon">2nd<br>PLACE</div>
+                    <div class="achievement-value">EMORY</div>
+                    <h3 class="achievement-title">Emory Health AI Datathon</h3>
+                    <p class="achievement-description">
+                        <strong>Position:</strong> Data Scientist & ML Engineer<br>
+                        2nd Place Winner, Emory University Health AI Datathon 2024 (12 teams competed)
+                    </p>
+                    <div class="achievement-logos">
+                        <img src="images/emory1.png" alt="Emory University Logo" class="achievement-logo">
+                        <img src="images/emory2.png" alt="Emory University Logo" class="achievement-logo">
+                    </div>
+                </div>
+
+                <div class="achievement-card fade-in">
+                    <div class="achievement-icon">CERT</div>
+                    <div class="achievement-value">EMORY</div>
+                    <h3 class="achievement-title">Emory Summer School Certificate</h3>
+                    <p class="achievement-description">
+                        <strong>Position:</strong> Research Participant & Scholar<br>
+                        Certificate of Participation, Health AI Summer School, Symposium & Datathon @ Emory 2024
+                    </p>
+                    <div class="achievement-logos">
+                        <img src="images/emory1.png" alt="Emory University Logo" class="achievement-logo">
+                        <img src="images/emory2.png" alt="Emory University Logo" class="achievement-logo">
+                    </div>
+                </div>
+
+                <div class="achievement-card fade-in">
+                    <div class="achievement-icon">CERT</div>
+                    <div class="achievement-value">SETI</div>
+                    <h3 class="achievement-title">FDL Certificate of Achievement</h3>
+                    <p class="achievement-description">
+                        <strong>Position:</strong> Research Fellow & AI Specialist<br>
+                        Outstanding Performance - FDL 2023 & U.S. Department of Energy, SETI Institute
+                    </p>
+                    <div class="achievement-logos">
+                        <img src="images/seti.png" alt="SETI Institute Logo" class="achievement-logo">
+                    </div>
+                </div>
+
+                <div class="achievement-card fade-in">
+                    <div class="achievement-icon">WINNER</div>
+                    <div class="achievement-value">GTA</div>
+                    <h3 class="achievement-title">Best Student in Engineering</h3>
+                    <p class="achievement-description">
+                        <strong>Position:</strong> Outstanding Student & Academic Leader<br>
+                        Winner, Best Student in Engineering - Ghana Tertiary Awards 2020
+                    </p>
+                    <div class="achievement-logos">
+                        <img src="images/ghana tertiary awards.png" alt="Ghana Tertiary Awards Logo" class="achievement-logo gta-logo">
+                    </div>
+                </div>
+
+                <div class="achievement-card fade-in">
+                    <div class="achievement-icon">RISING<br>STAR</div>
+                    <div class="achievement-value">UCC</div>
+                    <h3 class="achievement-title">Rising Star in Embedded Programming</h3>
+                    <p class="achievement-description">
+                        <strong>Position:</strong> Top Emerging Programmer & Innovator<br>
+                        Winner, Rising Star in Embedded Programming - PHYSAG Excellence Awards 2021
+                    </p>
+                    <div class="achievement-logos">
+                        <img src="images/ucc.png" alt="University of Cape Coast Logo" class="achievement-logo ucc-logo">
+                    </div>
+                </div>
+
+                <div class="achievement-card fade-in">
+                    <div class="achievement-icon">WINNER</div>
+                    <div class="achievement-value">UCC</div>
+                    <h3 class="achievement-title">Most Innovative Student</h3>
+                    <p class="achievement-description">
+                        <strong>Position:</strong> Top Innovation Leader & Dean's Award Recipient<br>
+                        Winner, Most Innovative Engineering Physics Student - UCC Dean's Award 2017
+                    </p>
+                    <div class="achievement-logos">
+                        <img src="images/ucc.png" alt="University of Cape Coast Logo" class="achievement-logo ucc-logo">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Publications Section -->
     <section id="publications" class="section" style="background: var(--gray-50);">
         <div class="container">
@@ -1125,7 +2043,6 @@
                         </a>
                     </div>
                 </article>
-
 
                 <article class="publication-card fade-in">
                     <div class="publication-header">
@@ -1224,110 +2141,6 @@
         </div>
     </section>
 
-    <!-- Achievements Section -->
-    <section id="achievements" class="section achievements">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Key Achievements</h2>
-                <p class="section-subtitle">
-                    Breakthrough innovations and recognition demonstrating technical excellence and real-world impact
-                </p>
-            </div>
-
-            <div class="achievements-grid">
-                <div class="achievement-card fade-in">
-                    <div class="achievement-icon">💰</div>
-                    <div class="achievement-value">$100K</div>
-                    <h3 class="achievement-title">Innovation Pitch Competition Winner</h3>
-                    <p class="achievement-description">
-                        $100,000 seed funding - Capital One/Delaware State University Innovation Pitch Competition (AgroVision)
-                    </p>
-                </div>
-
-                <div class="achievement-card fade-in">
-                    <div class="achievement-icon">🏆</div>
-                    <div class="achievement-value">1st Place</div>
-                    <h3 class="achievement-title">MIT AI & Education Summit</h3>
-                    <p class="achievement-description">
-                        1st Place Winner - MIT AI & Education Summit Hack the Climate Challenge (ThermaWise project)
-                    </p>
-                </div>
-
-                <div class="achievement-card fade-in">
-                    <div class="achievement-icon">🥇</div>
-                    <div class="achievement-value">1st Place</div>
-                    <h3 class="achievement-title">National Symposium on Equitable AI</h3>
-                    <p class="achievement-description">
-                        1st Place, Poster Presentation - 2025 National Symposium on Equitable AI, CEAMLS
-                    </p>
-                </div>
-
-                <div class="achievement-card fade-in">
-                    <div class="achievement-icon">🏆</div>
-                    <div class="achievement-value">$2K</div>
-                    <h3 class="achievement-title">Morgan TechFest 2024 Winner</h3>
-                    <p class="achievement-description">
-                        1st Place, Morgan TechFest 2024 Innovation Expo - $2,000 prize for outstanding innovation
-                    </p>
-                </div>
-
-                <div class="achievement-card fade-in">
-                    <div class="achievement-icon">🥈</div>
-                    <div class="achievement-value">2nd Place</div>
-                    <h3 class="achievement-title">Emory Health AI Datathon</h3>
-                    <p class="achievement-description">
-                        2nd Place Winner, Emory University Health AI Datathon 2024 (12 teams competed)
-                    </p>
-                </div>
-
-                <div class="achievement-card fade-in">
-                    <div class="achievement-icon">🏅</div>
-                    <div class="achievement-value">Health AI</div>
-                    <h3 class="achievement-title">Emory Summer School Certificate</h3>
-                    <p class="achievement-description">
-                        Certificate of Participation, Health AI Summer School, Symposium & Datathon @ Emory 2024
-                    </p>
-                </div>
-
-                <div class="achievement-card fade-in">
-                    <div class="achievement-icon">🛰️</div>
-                    <div class="achievement-value">SETI</div>
-                    <h3 class="achievement-title">FDL Certificate of Achievement</h3>
-                    <p class="achievement-description">
-                        Outstanding Performance - FDL 2023 & U.S. Department of Energy, SETI Institute
-                    </p>
-                </div>
-
-                <div class="achievement-card fade-in">
-                    <div class="achievement-icon">🎓</div>
-                    <div class="achievement-value">Ghana</div>
-                    <h3 class="achievement-title">Best Student in Engineering</h3>
-                    <p class="achievement-description">
-                        Winner, Best Student in Engineering - Ghana Tertiary Awards 2020
-                    </p>
-                </div>
-
-                <div class="achievement-card fade-in">
-                    <div class="achievement-icon">⭐</div>
-                    <div class="achievement-value">Rising</div>
-                    <h3 class="achievement-title">Rising Star in Embedded Programming</h3>
-                    <p class="achievement-description">
-                        Winner, Rising Star in Embedded Programming - PHYSAG Excellence Awards 2021
-                    </p>
-                </div>
-
-                <div class="achievement-card fade-in">
-                    <div class="achievement-icon">🏅</div>
-                    <div class="achievement-value">UCC</div>
-                    <h3 class="achievement-title">Most Innovative Student</h3>
-                    <p class="achievement-description">
-                        Winner, Most Innovative Engineering Physics Student - UCC Dean's Award 2017
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- Contact Section -->
     <section id="contact" class="section contact">
         <div class="container">
@@ -1343,7 +2156,6 @@
                     <h3>Get In Touch</h3>
                     
                     <div class="contact-item">
-                        <div class="contact-item-icon">📧</div>
                         <div>
                             <div>Email</div>
                             <div style="color: var(--white); font-weight: 600;">danya3@morgan.edu</div>
@@ -1352,7 +2164,6 @@
 
 
                     <div class="contact-item">
-                        <div class="contact-item-icon">📍</div>
                         <div>
                             <div>Location</div>
                             <div style="color: var(--white); font-weight: 600;">Baltimore, Maryland, USA</div>
@@ -1360,7 +2171,6 @@
                     </div>
 
                     <div class="contact-item">
-                        <div class="contact-item-icon">🏛️</div>
                         <div>
                             <div>Institution</div>
                             <div style="color: var(--white); font-weight: 600;">Morgan State University</div>
@@ -1388,15 +2198,16 @@
     <!-- Footer -->
     <footer>
         <div class="container">
-            <div class="footer-social">
-                <a href="https://github.com/DAVIDNYARKO123" target="_blank" class="social-link">
-                    <span style="font-size: 20px;">💻</span>
-                </a>
+            <div class="footer-content">
+                <div class="footer-links">
+                    <a href="mailto:danya3@morgan.edu" class="footer-link">Send Email</a>
+                    <a href="https://www.linkedin.com/in/david-nyarko-766974163" target="_blank" class="footer-link">LinkedIn</a>
+                    <a href="https://github.com/DAVIDNYARKO123" target="_blank" class="footer-link">GitHub</a>
+                </div>
+                <p class="footer-text">
+                    © 2025 David Nyarko. All rights reserved.
+                </p>
             </div>
-            
-            <p class="footer-text">
-                © 2025 David Nyarko. All rights reserved.
-            </p>
         </div>
     </footer>
 
