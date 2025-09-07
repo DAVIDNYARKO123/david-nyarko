@@ -1000,11 +1000,13 @@
             padding: 60px 0;
             overflow: hidden;
             position: relative;
+            width: 100%;
         }
 
         .logos-container {
             overflow: hidden;
             position: relative;
+            width: 100%;
         }
 
         .logos-track {
@@ -1285,8 +1287,19 @@
         }
 
         @media (max-width: 768px) {
+            html, body {
+                width: 100%;
+                overflow-x: hidden;
+            }
+            
+            * {
+                box-sizing: border-box;
+            }
+            
             .container {
                 padding: 0 20px;
+                width: 100%;
+                max-width: 100%;
             }
 
             .nav-menu {
@@ -1329,6 +1342,12 @@
                 flex-wrap: nowrap;
                 overflow-x: auto;
                 -webkit-overflow-scrolling: touch;
+                scrollbar-width: none;
+                -ms-overflow-style: none;
+            }
+            
+            .skill-badges::-webkit-scrollbar {
+                display: none;
             }
 
             .skill-badge {
