@@ -1294,7 +1294,88 @@
             }
 
             .hero {
-                padding: 100px 0 60px;
+                padding: 80px 0 40px;
+            }
+
+            .hero-container {
+                grid-template-columns: 1fr;
+                gap: 32px;
+            }
+
+            .hero-image {
+                height: 320px;
+                order: -1;
+                margin-bottom: 16px;
+            }
+
+            .hero-content {
+                text-align: center;
+            }
+
+            .hero-content h1 {
+                font-size: 36px;
+                margin-bottom: 16px;
+            }
+
+            .hero-subtitle {
+                font-size: 18px;
+                margin-bottom: 20px;
+            }
+
+            .skill-badges {
+                justify-content: center;
+                margin-bottom: 20px;
+                gap: 6px;
+                flex-wrap: nowrap;
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
+            }
+
+            .skill-badge {
+                font-size: 8px;
+                padding: 2px 4px;
+                flex-shrink: 0;
+            }
+
+            .hero-description {
+                font-size: 15px;
+                margin-bottom: 32px;
+                text-align: center;
+                max-width: none;
+            }
+
+            .hero-stats {
+                justify-content: center;
+                gap: 24px;
+                flex-wrap: wrap;
+                margin-bottom: 32px;
+                padding: 24px 0;
+            }
+
+            .stat {
+                text-align: center;
+                min-width: 80px;
+            }
+
+            .stat-number {
+                font-size: 28px;
+            }
+
+            .stat-label {
+                font-size: 12px;
+            }
+
+            .hero-cta {
+                justify-content: center;
+                flex-direction: column;
+                gap: 12px;
+            }
+
+            .btn {
+                width: 100%;
+                max-width: 280px;
+                justify-content: center;
+                margin: 0 auto;
             }
 
             .section {
@@ -1317,15 +1398,6 @@
 
             .section-title {
                 font-size: 36px;
-            }
-
-            .hero-content h1 {
-                font-size: 48px;
-            }
-
-            .hero-stats {
-                gap: 32px;
-                flex-wrap: wrap;
             }
 
             .news-grid,
