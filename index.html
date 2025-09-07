@@ -303,6 +303,35 @@
             text-align: center;
         }
 
+        /* Skill Badges */
+        .skill-badges {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 24px;
+            flex-wrap: wrap;
+        }
+
+        .skill-badge {
+            display: inline-flex;
+            align-items: center;
+            padding: 3px 6px;
+            background: var(--gray-100);
+            border: 1px solid var(--gray-200);
+            border-radius: 3px;
+            font-size: 10px;
+            font-weight: 600;
+            color: var(--gray-700);
+            white-space: nowrap;
+            transition: all 0.2s ease;
+        }
+
+        .skill-badge:hover {
+            background: var(--black);
+            color: var(--white);
+            border-color: var(--black);
+            transform: translateY(-1px);
+        }
+
         /* Sections */
         .section {
             padding: 100px 0;
@@ -1371,6 +1400,15 @@
                 <div class="hero-content">
                     <h1>David Nyarko</h1>
                     <p class="hero-subtitle">Applied AI & Robotics Software Engineer</p>
+                    
+                    <div class="skill-badges">
+                        <span class="skill-badge">Robotics Engineer</span>
+                        <span class="skill-badge">AI/ML Architect</span>
+                        <span class="skill-badge">Autonomous Drone Systems</span>
+                        <span class="skill-badge">Indie Game Developer</span>
+                        <span class="skill-badge">Full-Stack Developer</span>
+                    </div>
+                    
                     <p class="hero-description">
                         Graduate Research Lead and Doctoral Engineering student at Morgan State University. 
                         Building breakthrough autonomous systems, winning $100K+ in competitions, and developing AI solutions that transform industries and serve humanity.
