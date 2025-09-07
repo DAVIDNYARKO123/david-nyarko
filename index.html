@@ -1405,6 +1405,37 @@
                 grid-template-columns: 1fr;
             }
 
+            /* Make achievement cards colorful by default on mobile */
+            .achievement-card {
+                transform: translateY(-8px) scale(1.01);
+                box-shadow: 
+                    0 20px 50px rgba(0, 0, 0, 0.15),
+                    0 6px 20px rgba(0, 0, 0, 0.08);
+                border-color: var(--gray-300);
+            }
+
+            .achievement-card::before {
+                opacity: 1;
+                animation: rotate 3s linear infinite;
+            }
+
+            .achievement-card::after {
+                opacity: 1;
+            }
+
+            .achievement-icon {
+                transform: scale(1.05) rotate(2deg);
+                box-shadow: 
+                    0 14px 36px rgba(0, 0, 0, 0.25),
+                    0 5px 14px rgba(0, 0, 0, 0.12);
+            }
+
+            .achievement-logo {
+                opacity: 1;
+                filter: grayscale(0%);
+                transform: scale(1.02);
+            }
+
             .hero-cta,
             .contact-buttons {
                 flex-direction: column;
