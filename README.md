@@ -10,6 +10,12 @@
 
 ---
 
+## 👤 Speaker Profile
+
+David Nyarko is a doctoral engineering student and Graduate Research Lead at Morgan State University, specializing in applied AI and robotics software engineering. An award-winning innovator with over $102,000 in competition winnings, David leads breakthrough autonomous systems development including the BWI Airport autonomous wheelchair project featured in The Baltimore Banner and Baltimore Business Journal. His achievements include first place at the Capital One/Delaware State University Innovation Pitch Competition ($100K seed funding) with Team AgroVision's AI-powered hydroponic farming system, recognition at MIT's AI & Education Summit, and multiple accolades from Emory University's Health AI Datathons. With expertise in machine learning, computer vision, and autonomous navigation, David combines technical excellence with humanitarian impact, developing AI solutions that transform industries while serving underrepresented communities, as recognized by the National Society of Black Engineers and featured across major media outlets.
+
+---
+
 ## 🏅 Awards
 
 - 🏆 **Winner**, $100,000 seed funding – Capital One/Delaware State University Innovation Pitch Competition (AgroVision)
