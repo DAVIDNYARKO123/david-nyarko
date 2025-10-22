@@ -1371,6 +1371,21 @@
                 justify-content: center;
             }
 
+            .hero-achievements-text {
+                justify-content: center !important;
+                gap: 12px !important;
+            }
+
+            .hero-achievements-text span {
+                font-size: 10px !important;
+                line-height: 1.4 !important;
+                text-align: center !important;
+            }
+
+            .achievement-divider {
+                height: 16px !important;
+            }
+
             .hero-content {
                 text-align: center;
                 width: 100%;
@@ -1639,10 +1654,10 @@
                     <h1>David Nyarko</h1>
                     <p class="hero-subtitle">Applied AI & Robotics Software Engineer</p>
 
-                    <div style="margin-bottom: 32px; display: flex; align-items: center; gap: 16px;">
-                        <span style="font-size: 15px; font-weight: 600; color: var(--black);">2025 HBCUniverse 30 Under 30</span>
-                        <span style="width: 1px; height: 20px; background: var(--gray-300);"></span>
-                        <span style="font-size: 15px; font-weight: 600; color: var(--black);">2020 Best Student in Engineering in Ghana</span>
+                    <div class="hero-achievements-text" style="margin-bottom: 32px; display: flex; align-items: center; gap: 16px; flex-wrap: nowrap;">
+                        <span style="font-size: 15px; font-weight: 600; color: var(--black); white-space: nowrap;">2025 HBCUniverse 30 Under 30</span>
+                        <span class="achievement-divider" style="width: 1px; height: 20px; background: var(--gray-300); flex-shrink: 0;">|</span>
+                        <span style="font-size: 15px; font-weight: 600; color: var(--black); white-space: nowrap;">2020 Best Student in Engineering in Ghana</span>
                     </div>
 
                     <p class="hero-description">
