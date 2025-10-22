@@ -21,15 +21,16 @@ Conduct AI and robotics research at Morgan State University, supporting autonomo
 
 ## 🏅 Awards
 
+- 🌟 **2025 HBCUniverse 30 Under 30** – Named among the nation's most promising young leaders from HBCUs
 - 🏆 **Winner**, $100,000 seed funding – Capital One/Delaware State University Innovation Pitch Competition (AgroVision)
-- 🥇 **1st Place**, Poster Presentation – 2025 National Symposium on Equitable AI, CEAMLS  
-- 🥇 **1st Place**, Morgan TechFest 2024 Innovation Expo – $2,000 prize  
-- 🥈 **2nd Place Winner**, Emory University Health AI Datathon 2024 (12 teams competed) 
-- 🏅 **Certificate of Participation**, Health AI Summer School, Symposium & Datathon @ Emory 2024  
-- 🏅 **Certificate of Achievement**, Outstanding Performance – FDL 2023 & U.S. Department of Energy, SETI Institute  
-- 🏆 **Winner**, Best Student in Engineering – Ghana Tertiary Awards 2020  
-- ⭐ **Winner**, Rising Star in Embedded Programming – PHYSAG Excellence Awards 2021  
-- 🛠️ **Winner**, Most Innovative Engineering Physics Student – UCC Dean’s Award 2017.  
+- 🥇 **1st Place**, Poster Presentation – 2025 National Symposium on Equitable AI, CEAMLS
+- 🥇 **1st Place**, Morgan TechFest 2024 Innovation Expo – $2,000 prize
+- 🥈 **2nd Place Winner**, Emory University Health AI Datathon 2024 (12 teams competed)
+- 🏅 **Certificate of Participation**, Health AI Summer School, Symposium & Datathon @ Emory 2024
+- 🏅 **Certificate of Achievement**, Outstanding Performance – FDL 2023 & U.S. Department of Energy, SETI Institute
+- 🏆 **Winner**, Best Student in Engineering – Ghana Tertiary Awards 2020
+- ⭐ **Winner**, Rising Star in Embedded Programming – PHYSAG Excellence Awards 2021
+- 🛠️ **Winner**, Most Innovative Engineering Physics Student – UCC Dean's Award 2017.  
 
 ---
 
