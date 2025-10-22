@@ -1392,14 +1392,10 @@
             }
 
             .skill-badges {
-                justify-content: flex-start;
+                justify-content: center;
                 margin-bottom: 20px;
                 gap: 4px;
-                flex-wrap: nowrap;
-                overflow-x: auto;
-                -webkit-overflow-scrolling: touch;
-                scrollbar-width: none;
-                -ms-overflow-style: none;
+                flex-wrap: wrap;
                 padding: 0 4px;
             }
             
@@ -1642,7 +1638,18 @@
                 <div class="hero-content">
                     <h1>David Nyarko</h1>
                     <p class="hero-subtitle">Applied AI & Robotics Software Engineer</p>
-                    
+
+                    <div style="margin-bottom: 32px; display: flex; align-items: center; gap: 16px;">
+                        <span style="font-size: 15px; font-weight: 600; color: var(--black);">2025 HBCUniverse 30 Under 30</span>
+                        <span style="width: 1px; height: 20px; background: var(--gray-300);"></span>
+                        <span style="font-size: 15px; font-weight: 600; color: var(--black);">2020 Best Student in Engineering in Ghana</span>
+                    </div>
+
+                    <p class="hero-description">
+                        Graduate Research Lead and Doctoral Engineering student at Morgan State University.
+                        Building breakthrough autonomous systems, winning $100K+ in competitions, and developing AI solutions that transform industries and serve humanity.
+                    </p>
+
                     <div class="skill-badges">
                         <span class="skill-badge">Robotics Engineer</span>
                         <span class="skill-badge">AI/ML Architect</span>
@@ -1650,12 +1657,7 @@
                         <span class="skill-badge">Indie Game Developer</span>
                         <span class="skill-badge">Full-Stack Developer</span>
                     </div>
-                    
-                    <p class="hero-description">
-                        Graduate Research Lead and Doctoral Engineering student at Morgan State University. 
-                        Building breakthrough autonomous systems, winning $100K+ in competitions, and developing AI solutions that transform industries and serve humanity.
-                    </p>
-                    
+
                     <div class="hero-stats">
                         <div class="stat">
                             <span class="stat-number">$102K+</span>
