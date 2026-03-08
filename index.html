@@ -145,6 +145,38 @@
             width: 100%;
         }
 
+        /* Hamburger Menu */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 6px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 8px;
+            z-index: 1001;
+        }
+
+        .hamburger span {
+            width: 25px;
+            height: 2px;
+            background: var(--black);
+            transition: all 0.3s ease;
+            border-radius: 2px;
+        }
+
+        .hamburger.active span:nth-child(1) {
+            transform: rotate(45deg) translate(8px, 8px);
+        }
+
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(7px, -7px);
+        }
+
         /* Hero Section */
         .hero {
             padding: 120px 0 80px;
@@ -986,6 +1018,11 @@
             border-radius: 8px;
         }
 
+        .achievement-logo.iccma-logo {
+            height: 60px;
+            max-width: 180px;
+        }
+
         .achievement-card:hover .achievement-logo {
             opacity: 1;
             filter: grayscale(0%);
@@ -1058,51 +1095,15 @@
         }
 
         /* Make GTA and MIT logos bigger in scrolling section */
-        .logo-item:nth-child(8) img,
-        .logo-item:nth-child(9) img,
-        .logo-item:nth-child(17) img,
-        .logo-item:nth-child(18) img,
-        .logo-item:nth-child(26) img,
-        .logo-item:nth-child(27) img,
-        .logo-item:nth-child(35) img,
-        .logo-item:nth-child(36) img,
-        .logo-item:nth-child(44) img,
-        .logo-item:nth-child(45) img,
-        .logo-item:nth-child(53) img,
-        .logo-item:nth-child(54) img,
-        .logo-item:nth-child(62) img,
-        .logo-item:nth-child(63) img,
-        .logo-item:nth-child(71) img,
-        .logo-item:nth-child(72) img,
-        .logo-item:nth-child(80) img,
-        .logo-item:nth-child(81) img,
-        .logo-item:nth-child(89) img,
-        .logo-item:nth-child(90) img {
+        .logo-item:nth-child(11n+8) img,
+        .logo-item:nth-child(11n+9) img {
             height: 80px;
             max-width: 220px;
         }
 
         /* Special styling for white logos - Capital One and CEAMLS only */
-        .logo-item:nth-child(3) img,
-        .logo-item:nth-child(4) img,
-        .logo-item:nth-child(13) img,
-        .logo-item:nth-child(14) img,
-        .logo-item:nth-child(23) img,
-        .logo-item:nth-child(24) img,
-        .logo-item:nth-child(33) img,
-        .logo-item:nth-child(34) img,
-        .logo-item:nth-child(43) img,
-        .logo-item:nth-child(44) img,
-        .logo-item:nth-child(53) img,
-        .logo-item:nth-child(54) img,
-        .logo-item:nth-child(63) img,
-        .logo-item:nth-child(64) img,
-        .logo-item:nth-child(73) img,
-        .logo-item:nth-child(74) img,
-        .logo-item:nth-child(83) img,
-        .logo-item:nth-child(84) img,
-        .logo-item:nth-child(93) img,
-        .logo-item:nth-child(94) img {
+        .logo-item:nth-child(11n+3) img,
+        .logo-item:nth-child(11n+4) img {
             background: #333;
             padding: 12px;
             border-radius: 8px;
@@ -1328,7 +1329,48 @@
                 max-width: 100%;
             }
 
+            .hamburger {
+                display: flex;
+            }
+
             .nav-menu {
+                position: fixed;
+                top: 80px;
+                right: -100%;
+                width: 100%;
+                max-width: 300px;
+                background: rgba(255, 255, 255, 0.98);
+                backdrop-filter: blur(20px);
+                flex-direction: column;
+                padding: 24px;
+                gap: 0;
+                box-shadow: -2px 0 20px rgba(0, 0, 0, 0.1);
+                transition: right 0.3s ease;
+                height: calc(100vh - 80px);
+                z-index: 1000;
+            }
+
+            .nav-menu.active {
+                right: 0;
+            }
+
+            .nav-menu li {
+                width: 100%;
+                border-bottom: 1px solid var(--gray-200);
+            }
+
+            .nav-menu li:last-child {
+                border-bottom: none;
+            }
+
+            .nav-menu a {
+                display: block;
+                padding: 16px 0;
+                font-size: 16px;
+                width: 100%;
+            }
+
+            .nav-menu a::after {
                 display: none;
             }
 
@@ -1638,7 +1680,12 @@
     <nav>
         <div class="nav-container">
             <a href="#" class="nav-logo">David Nyarko</a>
-            <ul class="nav-menu">
+            <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu" id="nav-menu">
                 <li><a href="#about">About</a></li>
                 <li><a href="#news">News</a></li>
                 <li><a href="#publications">Publications</a></li>
@@ -1717,7 +1764,7 @@
     <!-- Moving Logos Section -->
     <section class="moving-logos">
         <div class="logos-container">
-            <div class="logos-track">
+            <div class="logos-track" id="logos-track">
                 <div class="logo-item">
                     <img src="images/emory1.png" alt="Emory University">
                 </div>
@@ -1748,284 +1795,8 @@
                 <div class="logo-item">
                     <img src="images/nsbe.png" alt="NSBE">
                 </div>
-                <!-- Duplicate logos for seamless loop -->
                 <div class="logo-item">
-                    <img src="images/emory1.png" alt="Emory University">
-                </div>
-                <div class="logo-item">
-                    <img src="images/emory2.png" alt="Emory University">
-                </div>
-                <div class="logo-item">
-                    <img src="images/capital one_ dsu.png" alt="Capital One & Delaware State University">
-                </div>
-                <div class="logo-item">
-                    <img src="images/ceamls.png" alt="CEAMLS">
-                </div>
-                <div class="logo-item">
-                    <img src="images/morgan.png" alt="Morgan State University">
-                </div>
-                <div class="logo-item">
-                    <img src="images/seti.png" alt="SETI Institute">
-                </div>
-                <div class="logo-item">
-                    <img src="images/ucc.png" alt="University of Cape Coast">
-                </div>
-                <div class="logo-item">
-                    <img src="images/ghana tertiary awards.png" alt="Ghana Tertiary Awards">
-                </div>
-                <div class="logo-item">
-                    <img src="images/mit.png" alt="MIT">
-                </div>
-                <div class="logo-item">
-                    <img src="images/nsbe.png" alt="NSBE">
-                </div>
-                <!-- Set 3 -->
-                <div class="logo-item">
-                    <img src="images/emory1.png" alt="Emory University">
-                </div>
-                <div class="logo-item">
-                    <img src="images/emory2.png" alt="Emory University">
-                </div>
-                <div class="logo-item">
-                    <img src="images/capital one_ dsu.png" alt="Capital One & Delaware State University">
-                </div>
-                <div class="logo-item">
-                    <img src="images/ceamls.png" alt="CEAMLS">
-                </div>
-                <div class="logo-item">
-                    <img src="images/morgan.png" alt="Morgan State University">
-                </div>
-                <div class="logo-item">
-                    <img src="images/seti.png" alt="SETI Institute">
-                </div>
-                <div class="logo-item">
-                    <img src="images/ucc.png" alt="University of Cape Coast">
-                </div>
-                <div class="logo-item">
-                    <img src="images/ghana tertiary awards.png" alt="Ghana Tertiary Awards">
-                </div>
-                <div class="logo-item">
-                    <img src="images/mit.png" alt="MIT">
-                </div>
-                <div class="logo-item">
-                    <img src="images/nsbe.png" alt="NSBE">
-                </div>
-                <!-- Set 4 -->
-                <div class="logo-item">
-                    <img src="images/emory1.png" alt="Emory University">
-                </div>
-                <div class="logo-item">
-                    <img src="images/emory2.png" alt="Emory University">
-                </div>
-                <div class="logo-item">
-                    <img src="images/capital one_ dsu.png" alt="Capital One & Delaware State University">
-                </div>
-                <div class="logo-item">
-                    <img src="images/ceamls.png" alt="CEAMLS">
-                </div>
-                <div class="logo-item">
-                    <img src="images/morgan.png" alt="Morgan State University">
-                </div>
-                <div class="logo-item">
-                    <img src="images/seti.png" alt="SETI Institute">
-                </div>
-                <div class="logo-item">
-                    <img src="images/ucc.png" alt="University of Cape Coast">
-                </div>
-                <div class="logo-item">
-                    <img src="images/ghana tertiary awards.png" alt="Ghana Tertiary Awards">
-                </div>
-                <div class="logo-item">
-                    <img src="images/mit.png" alt="MIT">
-                </div>
-                <div class="logo-item">
-                    <img src="images/nsbe.png" alt="NSBE">
-                </div>
-                <!-- Set 5 -->
-                <div class="logo-item">
-                    <img src="images/emory1.png" alt="Emory University">
-                </div>
-                <div class="logo-item">
-                    <img src="images/emory2.png" alt="Emory University">
-                </div>
-                <div class="logo-item">
-                    <img src="images/capital one_ dsu.png" alt="Capital One & Delaware State University">
-                </div>
-                <div class="logo-item">
-                    <img src="images/ceamls.png" alt="CEAMLS">
-                </div>
-                <div class="logo-item">
-                    <img src="images/morgan.png" alt="Morgan State University">
-                </div>
-                <div class="logo-item">
-                    <img src="images/seti.png" alt="SETI Institute">
-                </div>
-                <div class="logo-item">
-                    <img src="images/ucc.png" alt="University of Cape Coast">
-                </div>
-                <div class="logo-item">
-                    <img src="images/ghana tertiary awards.png" alt="Ghana Tertiary Awards">
-                </div>
-                <div class="logo-item">
-                    <img src="images/mit.png" alt="MIT">
-                </div>
-                <div class="logo-item">
-                    <img src="images/nsbe.png" alt="NSBE">
-                </div>
-                <!-- Set 6 -->
-                <div class="logo-item">
-                    <img src="images/emory1.png" alt="Emory University">
-                </div>
-                <div class="logo-item">
-                    <img src="images/emory2.png" alt="Emory University">
-                </div>
-                <div class="logo-item">
-                    <img src="images/capital one_ dsu.png" alt="Capital One & Delaware State University">
-                </div>
-                <div class="logo-item">
-                    <img src="images/ceamls.png" alt="CEAMLS">
-                </div>
-                <div class="logo-item">
-                    <img src="images/morgan.png" alt="Morgan State University">
-                </div>
-                <div class="logo-item">
-                    <img src="images/seti.png" alt="SETI Institute">
-                </div>
-                <div class="logo-item">
-                    <img src="images/ucc.png" alt="University of Cape Coast">
-                </div>
-                <div class="logo-item">
-                    <img src="images/ghana tertiary awards.png" alt="Ghana Tertiary Awards">
-                </div>
-                <div class="logo-item">
-                    <img src="images/mit.png" alt="MIT">
-                </div>
-                <div class="logo-item">
-                    <img src="images/nsbe.png" alt="NSBE">
-                </div>
-                <!-- Set 7 -->
-                <div class="logo-item">
-                    <img src="images/emory1.png" alt="Emory University">
-                </div>
-                <div class="logo-item">
-                    <img src="images/emory2.png" alt="Emory University">
-                </div>
-                <div class="logo-item">
-                    <img src="images/capital one_ dsu.png" alt="Capital One & Delaware State University">
-                </div>
-                <div class="logo-item">
-                    <img src="images/ceamls.png" alt="CEAMLS">
-                </div>
-                <div class="logo-item">
-                    <img src="images/morgan.png" alt="Morgan State University">
-                </div>
-                <div class="logo-item">
-                    <img src="images/seti.png" alt="SETI Institute">
-                </div>
-                <div class="logo-item">
-                    <img src="images/ucc.png" alt="University of Cape Coast">
-                </div>
-                <div class="logo-item">
-                    <img src="images/ghana tertiary awards.png" alt="Ghana Tertiary Awards">
-                </div>
-                <div class="logo-item">
-                    <img src="images/mit.png" alt="MIT">
-                </div>
-                <div class="logo-item">
-                    <img src="images/nsbe.png" alt="NSBE">
-                </div>
-                <!-- Set 8 -->
-                <div class="logo-item">
-                    <img src="images/emory1.png" alt="Emory University">
-                </div>
-                <div class="logo-item">
-                    <img src="images/emory2.png" alt="Emory University">
-                </div>
-                <div class="logo-item">
-                    <img src="images/capital one_ dsu.png" alt="Capital One & Delaware State University">
-                </div>
-                <div class="logo-item">
-                    <img src="images/ceamls.png" alt="CEAMLS">
-                </div>
-                <div class="logo-item">
-                    <img src="images/morgan.png" alt="Morgan State University">
-                </div>
-                <div class="logo-item">
-                    <img src="images/seti.png" alt="SETI Institute">
-                </div>
-                <div class="logo-item">
-                    <img src="images/ucc.png" alt="University of Cape Coast">
-                </div>
-                <div class="logo-item">
-                    <img src="images/ghana tertiary awards.png" alt="Ghana Tertiary Awards">
-                </div>
-                <div class="logo-item">
-                    <img src="images/mit.png" alt="MIT">
-                </div>
-                <div class="logo-item">
-                    <img src="images/nsbe.png" alt="NSBE">
-                </div>
-                <!-- Set 9 -->
-                <div class="logo-item">
-                    <img src="images/emory1.png" alt="Emory University">
-                </div>
-                <div class="logo-item">
-                    <img src="images/emory2.png" alt="Emory University">
-                </div>
-                <div class="logo-item">
-                    <img src="images/capital one_ dsu.png" alt="Capital One & Delaware State University">
-                </div>
-                <div class="logo-item">
-                    <img src="images/ceamls.png" alt="CEAMLS">
-                </div>
-                <div class="logo-item">
-                    <img src="images/morgan.png" alt="Morgan State University">
-                </div>
-                <div class="logo-item">
-                    <img src="images/seti.png" alt="SETI Institute">
-                </div>
-                <div class="logo-item">
-                    <img src="images/ucc.png" alt="University of Cape Coast">
-                </div>
-                <div class="logo-item">
-                    <img src="images/ghana tertiary awards.png" alt="Ghana Tertiary Awards">
-                </div>
-                <div class="logo-item">
-                    <img src="images/mit.png" alt="MIT">
-                </div>
-                <div class="logo-item">
-                    <img src="images/nsbe.png" alt="NSBE">
-                </div>
-                <!-- Set 10 -->
-                <div class="logo-item">
-                    <img src="images/emory1.png" alt="Emory University">
-                </div>
-                <div class="logo-item">
-                    <img src="images/emory2.png" alt="Emory University">
-                </div>
-                <div class="logo-item">
-                    <img src="images/capital one_ dsu.png" alt="Capital One & Delaware State University">
-                </div>
-                <div class="logo-item">
-                    <img src="images/ceamls.png" alt="CEAMLS">
-                </div>
-                <div class="logo-item">
-                    <img src="images/morgan.png" alt="Morgan State University">
-                </div>
-                <div class="logo-item">
-                    <img src="images/seti.png" alt="SETI Institute">
-                </div>
-                <div class="logo-item">
-                    <img src="images/ucc.png" alt="University of Cape Coast">
-                </div>
-                <div class="logo-item">
-                    <img src="images/ghana tertiary awards.png" alt="Ghana Tertiary Awards">
-                </div>
-                <div class="logo-item">
-                    <img src="images/mit.png" alt="MIT">
-                </div>
-                <div class="logo-item">
-                    <img src="images/nsbe.png" alt="NSBE">
+                    <img src="images/iccma.png" alt="ICCMA">
                 </div>
             </div>
         </div>
@@ -2293,6 +2064,19 @@
                 </div>
 
                 <div class="achievement-card fade-in">
+                    <div class="achievement-icon">BEST<br>PRES.</div>
+                    <div class="achievement-value">ICCMA</div>
+                    <h3 class="achievement-title">Best Presentation Award - ICCMA 2025</h3>
+                    <p class="achievement-description">
+                        <strong>Position:</strong> Lead Researcher & Presenter<br>
+                        Best Presentation Award at the 13th International Conference on Control, Mechatronics and Automation (ICCMA 2025) in Paris, France for presenting UrbanFlow research
+                    </p>
+                    <div class="achievement-logos">
+                        <img src="images/iccma.png" alt="ICCMA Logo" class="achievement-logo iccma-logo">
+                    </div>
+                </div>
+
+                <div class="achievement-card fade-in">
                     <div class="achievement-icon">1st<br>PLACE</div>
                     <div class="achievement-value">$100K</div>
                     <h3 class="achievement-title">Innovation Pitch Competition Winner</h3>
@@ -2438,6 +2222,34 @@
             </div>
 
             <div class="publications-grid">
+                <article class="publication-card fade-in">
+                    <div class="publication-header">
+                        <div class="publication-type">Conference Paper</div>
+                        <div class="publication-year">2025</div>
+                    </div>
+                    <h3 class="publication-title">UrbanFlow: A Hybrid Vision-LiDAR Retrofit Architecture for Autonomous Wheelchair Navigation in Complex Indoor Environments</h3>
+                    <p class="publication-authors">
+                        Kofi Nyarko, <strong>David Nyarko</strong>, Derrick Cook, Charles Dankwa, Michael West, Mansoureh Jeihani
+                    </p>
+                    <p class="publication-venue">
+                        2025 13th International Conference on Control, Mechatronics and Automation (ICCMA), Paris, France
+                    </p>
+                    <p class="publication-abstract">
+                        This work presents a hybrid autonomous navigation system designed for large, dynamic environments such as airports.
+                        The system combines classical computer vision techniques for color-based track detection with deep learning-based
+                        instance segmentation using a YOLOv8 single-shot detector, enabling end-to-end autonomous wheelchair navigation
+                        across entire airports without user intervention.
+                    </p>
+                    <div class="publication-links">
+                        <a href="https://ieeexplore.ieee.org/document/11369616" target="_blank" class="pub-link">
+                            📄 Read Paper
+                        </a>
+                        <a href="https://doi.org/10.1109/ICCMA67641.2025.11369616" target="_blank" class="pub-link">
+                            🔗 DOI
+                        </a>
+                    </div>
+                </article>
+
                 <article class="publication-card fade-in">
                     <div class="publication-header">
                         <div class="publication-type">Journal Paper</div>
@@ -2626,13 +2438,44 @@
                     <a href="https://github.com/DAVIDNYARKO123" target="_blank" class="footer-link">GitHub</a>
                 </div>
                 <p class="footer-text">
-                    © 2025 David Nyarko. All rights reserved.
+                    © 2026 David Nyarko. All rights reserved.
                 </p>
             </div>
         </div>
     </footer>
 
     <script>
+        // Duplicate logos for seamless scrolling animation
+        (function() {
+            const logosTrack = document.getElementById('logos-track');
+            if (logosTrack) {
+                const logos = Array.from(logosTrack.children);
+                // Duplicate the logos 9 times for smooth infinite scroll (10 total sets)
+                for (let i = 0; i < 9; i++) {
+                    logos.forEach(logo => {
+                        logosTrack.appendChild(logo.cloneNode(true));
+                    });
+                }
+            }
+        })();
+
+        // Mobile hamburger menu toggle
+        const hamburger = document.getElementById('hamburger');
+        const navMenu = document.getElementById('nav-menu');
+
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.nav-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+            });
+        });
+
         // Smooth scrolling for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
