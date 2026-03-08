@@ -1,0 +1,11 @@
+# robots.txt for davidnyarko.site
+
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://www.davidnyarko.site/sitemap.xml
+
+# Disallow any future private directories
+# User-agent: *
+# Disallow: /private/
