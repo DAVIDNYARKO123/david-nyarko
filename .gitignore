@@ -97,6 +97,29 @@ dist
 .yarn/install-state.gz
 .pnp.*
 
+# LaTeX
+*.aux
+*.log
+*.out
+*.toc
+*.fdb_latexmk
+*.fls
+*.synctex.gz
+*.bbl
+*.blg
+*.lof
+*.lot
+*.idx
+*.ind
+*.ilg
+*.nav
+*.snm
+*.vrb
+*.bcf
+*.run.xml
+*.xdv
+*.synctex(busy)
+
 # Misc
 *.bak
 *.swp
